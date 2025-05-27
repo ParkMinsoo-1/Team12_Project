@@ -613,6 +613,7 @@ GameObject:
   - component: {fileID: 735572320}
   - component: {fileID: 735572319}
   - component: {fileID: 735572318}
+  - component: {fileID: 735572321}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -645,7 +646,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!4 &735572316
 Transform:
@@ -713,6 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationController: {fileID: 0}
   movSpeed: 10
+  rotateSpeed: 10
 --- !u!114 &735572320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,6 +777,21 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &735572321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735572314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9c968d02a898443b557521d965efd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentValue: 0
+  startValue: 0
+  maxValue: 0
 --- !u!1 &742540622
 GameObject:
   m_ObjectHideFlags: 0
