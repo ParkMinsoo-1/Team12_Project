@@ -43,25 +43,12 @@ public class PlayerController : MonoBehaviour
 /// Object가 자원인지 제작 도구인지
 /// </summary>
 /// <param name="context"></param>
-    public void InteractInput(InputAction.CallbackContext context)
-    {
-        if (context.phase == InputActionPhase.Performed)
-        {
-            
-        }
-
-        else
-        {
-            Debug.Log("아이템이 없습니다.");
-        }
-    }
     
     // 점프 기능이 필요하다면 구현 할 예정.
     // public void JumpInput(InputAction.CallbackContext context)
     // {
     //     
     // }
-    
 
     void Move()
     {

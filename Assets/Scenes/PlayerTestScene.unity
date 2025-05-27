@@ -614,6 +614,8 @@ GameObject:
   - component: {fileID: 735572319}
   - component: {fileID: 735572318}
   - component: {fileID: 735572321}
+  - component: {fileID: 735572322}
+  - component: {fileID: 735572323}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -684,10 +686,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 3.4769554
+  m_Radius: 0.415963
+  m_Height: 3.790239
   m_Direction: 1
-  m_Center: {x: 0, y: 1.6596377, z: 0}
+  m_Center: {x: 0, y: 1.8162795, z: 0.084037006}
 --- !u!114 &735572318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,6 +702,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f43af1ea6f58f41aad6100971cc317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerController: {fileID: 0}
+  _interaction: {fileID: 0}
 --- !u!114 &735572319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,6 +796,39 @@ MonoBehaviour:
   currentValue: 0
   startValue: 0
   maxValue: 0
+--- !u!114 &735572322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735572314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a73a82f80d76647907910b3bc5a0e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &735572323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735572314}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 3.4, z: 6}
+  m_Center: {x: 0, y: 1.7, z: 0}
 --- !u!1 &742540622
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +990,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cea919f2754aead46be4d4961fb50b77, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cea919f2754aead46be4d4961fb50b77, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
