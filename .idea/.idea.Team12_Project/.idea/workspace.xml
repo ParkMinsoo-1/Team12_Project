@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f1533554-3bd5-4ab4-83c0-a57a92ed6781" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Team12_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Team12_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputAction/InputSystem.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputAction/InputSystem.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayerTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayerTestScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +103,7 @@
       <updated>1748255501357</updated>
       <workItem from="1748255504114" duration="5286000" />
       <workItem from="1748304933578" duration="400000" />
-      <workItem from="1748305350300" duration="817000" />
+      <workItem from="1748305350300" duration="3803000" />
     </task>
     <servers />
   </component>

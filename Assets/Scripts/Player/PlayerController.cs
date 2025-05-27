@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     private Vector2 movInput;
+    private Vector3 lookDirection;
     
     [Header ("Movement")]
     [SerializeField] private float movSpeed;

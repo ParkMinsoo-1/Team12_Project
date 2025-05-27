@@ -580,6 +580,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9152934f-31d0-48f4-93f8-fc612fa12e83
     m_ActionName: Player/Interaction[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 20ed966d-3a8a-4748-8f7f-1bccea43eb7f
+    m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
