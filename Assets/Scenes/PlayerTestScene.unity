@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833f3b07daa6bf54abb263c974890014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationController: {fileID: 0}
+  _animationController: {fileID: 0}
   movSpeed: 10
   rotateSpeed: 10
 --- !u!114 &735572320
@@ -808,6 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a73a82f80d76647907910b3bc5a0e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curInteractObject: {fileID: 0}
 --- !u!65 &735572323
 BoxCollider:
   m_ObjectHideFlags: 0
