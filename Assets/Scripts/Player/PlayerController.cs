@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        //Rotate(); 로테이션함수 변경
+        //Rotate(); 로테이션 방식 변경
     }
     
     public void MoveInput(InputAction.CallbackContext context)
@@ -45,7 +45,15 @@ public class PlayerController : MonoBehaviour
 /// <param name="context"></param>
     public void InteractInput(InputAction.CallbackContext context)
     {
-        
+        if (context.phase == InputActionPhase.Performed)
+        {
+            
+        }
+
+        else
+        {
+            Debug.Log("아이템이 없습니다.");
+        }
     }
     
     // 점프 기능이 필요하다면 구현 할 예정.
@@ -78,7 +86,9 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime*rotateSpeed);
         }
     }
-
+    
+    
+    //마우스 위치에 따른 플레이어 방향 전환
     // void Rotate()
     // {
     //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
