@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d5021a69bb0cde44b10adf6fac49733, type: 3}
-  m_Name: Wood
+  m_Name: Axe
   m_EditorClassIdentifier: 
-  id: 1
-  itemName: wood
-  description: wood description
+  id: 4
+  itemName: Axe
+  description: Chops down trees and breaks wooden objects
   icon: {fileID: 0}
-  itemtype: 3
-  maxStack: 100
-  price: 5
+  itemtype: 2
+  maxStack: 0
+  price: 0
   equipment: 0
   atk: 0
   def: 0

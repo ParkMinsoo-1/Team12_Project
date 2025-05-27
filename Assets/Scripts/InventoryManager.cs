@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -40,7 +37,7 @@ public class InventoryManager : MonoBehaviour
 
     public void PickUp(ItemScriptable itemData)
     {
-        // 인벤토리에 보내줄 정보
+        // Item data for inventory
         Controller player = FindObjectOfType<Controller>();
         player.AddItem(itemData);
 

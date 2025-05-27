@@ -16,12 +16,18 @@ public class Controller : MonoBehaviour
     }
     private void Update()
     {
-        float h = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right
-        float v = Input.GetAxisRaw("Vertical");   // W/S or Up/Down
-        moveInput = new Vector3(h, 0f, v).normalized;
+        TestCode();
     }
     private void FixedUpdate()
     {
+
+    }
+    void TestCode()
+    {
+        float h = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right
+        float v = Input.GetAxisRaw("Vertical");   // W/S or Up/Down
+        moveInput = new Vector3(h, 0f, v).normalized;
+
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
     private void OnTriggerEnter(Collider other)
@@ -33,6 +39,8 @@ public class Controller : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+    // AddItem -> Inventory
     public void AddItem(ItemScriptable itemData)
     {
         testInventory.Add(itemData);
