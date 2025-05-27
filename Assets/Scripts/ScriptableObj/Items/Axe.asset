@@ -17,10 +17,10 @@ MonoBehaviour:
   description: Chops down trees and breaks wooden objects
   icon: {fileID: 0}
   itemtype: 2
-  maxStack: 0
-  price: 0
+  maxStack: 1
+  price: 150
   equipment: 0
-  atk: 0
+  atk: 8
   def: 0
   healAmount: 0
   duration: 0

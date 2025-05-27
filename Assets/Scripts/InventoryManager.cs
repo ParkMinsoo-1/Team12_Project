@@ -18,6 +18,13 @@ public class InventoryManager : MonoBehaviour
         }
     }
     #endregion
+    #region TestManager
+    public Controller controller;
+    private Controller Controller => controller;
+    public TestInventory inventory;
+    private TestInventory Inventory => inventory;
+    #endregion
+
     private void Awake()
     {
         if (instance == null)

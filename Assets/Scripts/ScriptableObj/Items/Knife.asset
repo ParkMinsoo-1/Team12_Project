@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   itemName: Knife
-  description: 
+  description: A basic melee weapon
   icon: {fileID: 0}
   itemtype: 2
-  maxStack: 0
-  price: 0
+  maxStack: 1
+  price: 120
   equipment: 0
-  atk: 0
+  atk: 4
   def: 0
   healAmount: 0
   duration: 0
