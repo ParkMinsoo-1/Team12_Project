@@ -14,6 +14,6 @@ public class AnimationController : MonoBehaviour
 
     public void Move(Vector3 playerDirection)
     {
-        animator.SetBool("IsMove", playerDirection.magnitude > 0.5f);
+        animator.SetBool("IsMove", playerDirection.magnitude > 0.9f);
     }
 }

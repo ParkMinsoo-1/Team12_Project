@@ -35,16 +35,21 @@ public class PlayerController : MonoBehaviour
             movInput = Vector2.zero;
         }
     }
-
+/// <summary>
+/// Interaction 정보에 따른 처리가 필요해보임.
+/// Object가 자원인지 제작 도구인지
+/// </summary>
+/// <param name="context"></param>
     public void InteractInput(InputAction.CallbackContext context)
     {
         
     }
-
-    public void JumpInput(InputAction.CallbackContext context)
-    {
-        
-    }
+    
+    // 점프 기능이 필요하다면 구현 할 예정.
+    // public void JumpInput(InputAction.CallbackContext context)
+    // {
+    //     
+    // }
     
 
     void Move()
@@ -54,7 +59,7 @@ public class PlayerController : MonoBehaviour
         
         Vector3 direction = forward*movInput.y + right*movInput.x;
         direction *= movSpeed;
-        direction.y = _rigidbody.velocity.y; //점프(?)
+        //direction.y = _rigidbody.velocity.y; 점프(?) 추가해야 한다면 활성화 시킴. 점프 추가 시 추가 변수 생성 필요.
         _rigidbody.velocity = direction;
         animationController.Move(direction);
     }
@@ -75,4 +80,5 @@ public class PlayerController : MonoBehaviour
             transform.rotation = rotation;
         }
     }
+
 }
