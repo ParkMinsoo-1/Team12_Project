@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        Rotate();
     }
     
     public void MoveInput(InputAction.CallbackContext context)
@@ -35,12 +36,29 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        Vector3 forward = Vector3.forward;
-        Vector3 right = Vector3.right;
+        Vector3 forward = transform.forward;
+        Vector3 right = transform.right;
         
         Vector3 direction = forward*movInput.y + right*movInput.x;
         direction *= movSpeed;
-        direction.y = _rigidbody.velocity.y;
+        direction.y = _rigidbody.velocity.y; //점프(?)
         _rigidbody.velocity = direction;
+    }
+
+    void Rotate()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Plane plane = new Plane(Vector3.up, transform.position);
+        float distance;
+
+        if (plane.Raycast(ray, out distance))
+        {
+            Vector3 point = ray.GetPoint(distance);
+            Vector3 direction = (point - transform.position).normalized;
+            direction.y = 0.0f;
+            
+            Quaternion rotation = Quaternion.LookRotation(direction);
+            transform.rotation = rotation;
+        }
     }
 }
