@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class InventoryUi : MonoBehaviour
 {
+    public DroppableEquipUi[] equipSlots;
 
+    private void InitEquipSlot()
+    {
+        
+    }
 }

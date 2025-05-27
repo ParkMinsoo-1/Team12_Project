@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class DraggableUi : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -12,10 +13,10 @@ public class DraggableUi : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     private RectTransform rect;
 
-    private CanvasGroup itemGroup; 
+    private CanvasGroup itemGroup;
     //ui아이템 프리팹이 자식을 가질 수도 있기에
     //자식까지 
-
+    protected ItemData itemData;
 
     private void Awake()
     {
@@ -27,6 +28,12 @@ public class DraggableUi : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnBeginDrag(PointerEventData evenData)
     {
+        DroppableEquipUi equipSlot = transform.parent.GetComponent<DroppableEquipUi>();
+        if (equipSlot != null)
+        {
+            equipSlot.ShowSilhouette();
+            //inven
+        }
         previousParent = transform.parent;
         //드래그 직전에 소속되어있던 부모의 트렌스폼 정보 저장
         transform.SetParent(inventoryUi);
