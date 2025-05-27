@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     private Vector2 movInput;
+    public AnimationController animationController;
     
     [Header ("Movement")]
     [SerializeField] private float movSpeed;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        animationController = GetComponentInChildren<AnimationController>();
     }
 
     private void FixedUpdate()
@@ -54,6 +56,7 @@ public class PlayerController : MonoBehaviour
         direction *= movSpeed;
         direction.y = _rigidbody.velocity.y; //점프(?)
         _rigidbody.velocity = direction;
+        animationController.Move(direction);
     }
 
     void Rotate()
