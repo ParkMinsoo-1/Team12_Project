@@ -58,9 +58,6 @@ public class PlayerController : MonoBehaviour
         Vector3 right = angle * Vector3.right;
 
         Vector3 direction = forward*movInput.y + right*movInput.x;
-        //direction *= movSpeed;
-        //direction.y = _rigidbody.velocity.y; 점프(?) 추가해야 한다면 활성화 시킴. 점프 추가 시 추가 변수 생성 필요.
-        //_rigidbody.velocity = direction;
         _rigidbody.MovePosition(_rigidbody.position + (direction * movSpeed * Time.fixedDeltaTime));
         _animationController.Move(direction);
         MoveDirection(direction);
