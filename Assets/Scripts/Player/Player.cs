@@ -14,4 +14,5 @@ public class Player : MonoBehaviour
         _playerController = GetComponent<PlayerController>();
         _interaction = GetComponent<Interaction>();
     }
+    
 }
