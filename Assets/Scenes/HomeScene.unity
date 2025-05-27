@@ -1433,6 +1433,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f9b3965d879e3c4294a6fb22052c65e, type: 3}
+--- !u!1 &453033025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 453033026}
+  - component: {fileID: 453033027}
+  m_Layer: 0
+  m_Name: FrunitureSpawnArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &453033026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453033025}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1146518546}
+  m_Father: {fileID: 709549326}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &453033027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453033025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3f9723ec1203b47ba6286c72531654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item1: {fileID: 919132149155446097, guid: 0383af9009b199543b6cb85d44f21997, type: 3}
 --- !u!1 &461237109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,8 +1733,8 @@ Transform:
   m_GameObject: {fileID: 531880761}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17, y: 0, z: -28.4}
-  m_LocalScale: {x: 14.5, y: 1, z: 20}
+  m_LocalPosition: {x: 42, y: 0, z: -19.6}
+  m_LocalScale: {x: -6.1, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2297,6 +2343,7 @@ Transform:
   m_Children:
   - {fileID: 1672731278}
   - {fileID: 1847502437}
+  - {fileID: 453033026}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &710725114
@@ -3536,6 +3583,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2084374562}
   m_SourcePrefab: {fileID: 100100000, guid: 6f9b3965d879e3c4294a6fb22052c65e, type: 3}
+--- !u!1 &1146518545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1146518546}
+  m_Layer: 0
+  m_Name: SpawnArea1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1146518546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146518545}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 39.44, y: 0, z: -15.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 453033026}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154749785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f9b3965d879e3c4294a6fb22052c65e, type: 3}
@@ -5152,7 +5230,7 @@ Transform:
   m_GameObject: {fileID: 1679975674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.9, y: -0.5, z: -33.8}
+  m_LocalPosition: {x: 9.2, y: -0.5, z: -33.8}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5893,7 +5971,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item1: {fileID: 1964535156755775538, guid: 38977b4b303eb4a4ab264231e0fbf2c4, type: 3}
-  spawnTransform: {fileID: 2082205041}
 --- !u!4 &1848073684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6f9b3965d879e3c4294a6fb22052c65e, type: 3}

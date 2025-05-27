@@ -1,12 +1,9 @@
 ﻿using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
     [SerializeField] GameObject player;
-
-
 
     void LateUpdate()
     {
@@ -21,17 +18,11 @@ public class CameraScript : MonoBehaviour
 
         for (int i = 0; i < hits.Length; i++)
         {
-            //obj.Add(hits[i].transform.GetComponent<TransparentObject>());
-            //objs = new TransparentObject[hits[i].transform.childCount];
-            //for (int j = 0; j < hits[i].transform.childCount; j++)
-            //{                
-                objs = hits[i].transform.GetComponentsInChildren<TransparentObject>();
-            //}
+            objs = hits[i].transform.GetComponentsInChildren<TransparentObject>();
             foreach (TransparentObject obj2 in objs)
             {
                 obj2?.BecomeTransparent();
             }
-            //obj[i]?.BecomeTransparent();
         }
     }
 }
