@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class InventoryManager : MonoBehaviour
 {
+    #region singleton
     private static InventoryManager instance;
     public static InventoryManager Instance
     {
@@ -19,6 +20,7 @@ public class InventoryManager : MonoBehaviour
             return instance;
         }
     }
+    #endregion
     private void Awake()
     {
         if (instance == null)

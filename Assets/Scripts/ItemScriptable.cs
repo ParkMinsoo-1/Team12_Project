@@ -4,8 +4,9 @@ public enum Itemtype
 {
     weapon,
     armor,
-    tool,
-    materials
+    tools,
+    resources,
+    food
 }
 
 [CreateAssetMenu(fileName = "NewItem")]
