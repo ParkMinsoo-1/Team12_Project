@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     private Vector2 movInput;
-    public AnimationController animationController;
+    public AnimationController _animationController;
     
     [Header ("Movement")]
     [SerializeField] private float movSpeed;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        animationController = GetComponentInChildren<AnimationController>();
+        _animationController = GetComponentInChildren<AnimationController>();
     }
 
     private void FixedUpdate()
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         direction *= movSpeed;
         //direction.y = _rigidbody.velocity.y; 점프(?) 추가해야 한다면 활성화 시킴. 점프 추가 시 추가 변수 생성 필요.
         _rigidbody.velocity = direction;
-        animationController.Move(direction);
+        _animationController.Move(direction);
         MoveDirection(direction);
     }
 
