@@ -16,11 +16,22 @@ public class CameraScript : MonoBehaviour
         if (hits == null) return;
 
         List<TransparentObject> obj = new List<TransparentObject>();
+        TransparentObject[] objs;
+
 
         for (int i = 0; i < hits.Length; i++)
         {
-            obj.Add(hits[i].transform.GetComponent<TransparentObject>());
-            obj[i]?.BecomeTransparent();
+            //obj.Add(hits[i].transform.GetComponent<TransparentObject>());
+            //objs = new TransparentObject[hits[i].transform.childCount];
+            //for (int j = 0; j < hits[i].transform.childCount; j++)
+            //{                
+                objs = hits[i].transform.GetComponentsInChildren<TransparentObject>();
+            //}
+            foreach (TransparentObject obj2 in objs)
+            {
+                obj2?.BecomeTransparent();
+            }
+            //obj[i]?.BecomeTransparent();
         }
     }
 }
