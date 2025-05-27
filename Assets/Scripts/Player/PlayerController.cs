@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     private Vector2 movInput;
-    private Vector3 lookDirection;
     
     [Header ("Movement")]
     [SerializeField] private float movSpeed;
@@ -34,6 +33,17 @@ public class PlayerController : MonoBehaviour
             movInput = Vector2.zero;
         }
     }
+
+    public void InteractInput(InputAction.CallbackContext context)
+    {
+        
+    }
+
+    public void JumpInput(InputAction.CallbackContext context)
+    {
+        
+    }
+    
 
     void Move()
     {
