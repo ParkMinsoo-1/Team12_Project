@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
   id: 5
-  itemName: Pick
+  itemName: Pickaxe
   description: Breaks rocks and mines ores
   icon: {fileID: 0}
   itemtype: 2
