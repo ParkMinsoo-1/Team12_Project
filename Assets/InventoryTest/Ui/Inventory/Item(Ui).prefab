@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6127924229884718338}
   - component: {fileID: 220474755781988726}
   - component: {fileID: 5714703235925057798}
-  - component: {fileID: 5702767600881937496}
+  - component: {fileID: 2187288161615143887}
   m_Layer: 5
   m_Name: Item(Ui)
   m_TagString: Untagged
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25, g: 0.2930566, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -89,7 +89,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &5702767600881937496
+--- !u!114 &2187288161615143887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,3 +101,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bfea539ce8db04e91b4d0a2f8667d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemIcon: {fileID: 0}
+  itemData: {fileID: 11400000, guid: 2cb73f76f19f71d42924d6e967c03b77, type: 2}

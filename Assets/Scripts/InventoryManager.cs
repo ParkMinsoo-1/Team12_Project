@@ -20,14 +20,8 @@ public class InventoryManager : MonoBehaviour
     }
     #endregion
     #region TestManager
-    public Controller controller;
-    private Controller Controller => controller;
-    public TestInventory inventory;
-    private TestInventory Inventory => inventory;
-    #endregion
     [SerializeField] private List<ItemDataSO> playerInven = new List<ItemDataSO>();
-
-
+    #endregion
 
     private void Awake()
     {
@@ -49,12 +43,10 @@ public class InventoryManager : MonoBehaviour
 
     public void PickUp(ItemDataSO itemData)
     {
-        // Item data for inventory
-        //Controller player = FindObjectOfType<Controller>();
+
         playerInven.Add(itemData);
+        UiManager.Instance.mainUi.AddUiItem(itemData);
         Debug.Log($"인벤토리에 {itemData.itemName} 이 추가되었습니다.");
         
-
-        //Debug.Log($"[�κ��丮] {itemData.itemName}");
     }
 }

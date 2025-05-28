@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class UiManager : MonoBehaviour
 {
-
     public static UiManager Instance { get; private set; }
     public MainUi mainUi;
 
@@ -22,7 +21,6 @@ public class UiManager : MonoBehaviour
         {
             Destroy(gameObject); // 중복 방지
         }
-        mainUi = FindObjectOfType<MainUi>();
     }
 
 
