@@ -10,7 +10,6 @@ public class HarvestData : MonoBehaviour
         currentHp = harvestData.maxHp;
     }
 
-
     public void TakeDamage(int amount)
     {
         currentHp -= amount;

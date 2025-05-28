@@ -1524,8 +1524,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9e4d30e9ff94448adb863127c40c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropItem: {fileID: 0}
-  hp: 0
+  harvestData: {fileID: 11400000, guid: a879a86d57a5d0d4f9105b69fa0e2c2e, type: 2}
+  currentHp: 0
 --- !u!1 &705355931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,7 +2476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efaf96b53650d28439c79540f60aa9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 0}
+  itemData: {fileID: 0}
+  harvest: {fileID: 0}
 --- !u!4 &1216390976
 Transform:
   m_ObjectHideFlags: 0
@@ -4219,7 +4220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testInventory: []
-  tree: {fileID: 0}
+  equippedItem: 0
   moveSpeed: 2
 --- !u!54 &1904852740
 Rigidbody:
