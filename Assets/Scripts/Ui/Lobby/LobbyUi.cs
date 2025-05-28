@@ -8,6 +8,8 @@ public class LobbyUi : MonoBehaviour
     public GameObject[] taps;
     //게임 버튼들을 참조하는 필드
     public GameObject[] layouts;
+    public GameObject playerObj;
+    public GameObject items;
 
     public void Awake()
     {
@@ -17,6 +19,9 @@ public class LobbyUi : MonoBehaviour
 
     public void OnStartButtonPress()
     {
+        playerObj.SetActive(true);
+        items.SetActive(true);
+
         GameObject cam = FindObjectOfType<Camera>().gameObject;
         Camera mainCam = cam.GetComponent<Camera>();
 
