@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8949155189237996642}
   - component: {fileID: 8578921323523152438}
   - component: {fileID: 7968390043893564922}
+  - component: {fileID: -6322451081011854574}
   m_Layer: 0
   m_Name: tool-knife
   m_TagString: Untagged
@@ -97,3 +98,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: a707afcf56532f246a2b971128464862, type: 2}
+--- !u!65 &-6322451081011854574
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8420538255328970392}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.44708142, y: 0.5899584, z: 0.040000018}
+  m_Center: {x: 0.02412297, y: 0.03263804, z: 0.020000001}

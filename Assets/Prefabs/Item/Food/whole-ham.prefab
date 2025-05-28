@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7420157455615580520}
   - component: {fileID: 6104832875682941206}
   - component: {fileID: 8352124956005140457}
+  - component: {fileID: 1208027493508757318}
   m_Layer: 0
   m_Name: whole-ham
   m_TagString: Untagged
@@ -97,3 +98,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: a811b12c4d6c0e94a86d54a853d447ad, type: 2}
+--- !u!64 &1208027493508757318
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78365295185754785}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4354154126254062935, guid: 9f8ecc430669502498c593e49cddffb4, type: 3}
