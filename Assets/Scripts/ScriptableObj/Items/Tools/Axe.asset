@@ -17,6 +17,7 @@ MonoBehaviour:
   description: Chops down trees and breaks wooden objects
   icon: {fileID: 0}
   itemtype: 2
+  toolType: 1
   maxStack: 1
   price: 150
   equipment: 0
@@ -24,3 +25,4 @@ MonoBehaviour:
   def: 0
   healAmount: 0
   duration: 0
+  hunger: 0

@@ -19,10 +19,11 @@ public class InventoryManager : MonoBehaviour
     }
     #endregion
     #region TestManager
-    public Controller controller;
-    private Controller Controller => controller;
-    public TestInventory inventory;
-    private TestInventory Inventory => inventory;
+    public ItemDataSO itemData;
+    private ItemDataSO ItemDataSO => itemData;
+    public HarvestData harvest;
+    private HarvestData Harvest => harvest;
+    
     #endregion
 
     private void Awake()

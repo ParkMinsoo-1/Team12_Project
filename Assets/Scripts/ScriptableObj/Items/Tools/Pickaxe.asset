@@ -17,6 +17,7 @@ MonoBehaviour:
   description: Breaks rocks and mines ores
   icon: {fileID: 0}
   itemtype: 2
+  toolType: 2
   maxStack: 1
   price: 180
   equipment: 0
@@ -24,3 +25,4 @@ MonoBehaviour:
   def: 0
   healAmount: 0
   duration: 0
+  hunger: 0
