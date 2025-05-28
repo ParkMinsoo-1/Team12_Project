@@ -10,6 +10,6 @@ public class StatusManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerManager.Instance.Player.
+        PlayerManager.Instance.Player._status.statusManager = this;
     }
 }
