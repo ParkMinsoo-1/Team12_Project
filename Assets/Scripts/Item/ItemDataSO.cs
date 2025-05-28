@@ -12,6 +12,7 @@ public enum Itemtype
 [CreateAssetMenu(fileName = "NewItem")]
 public class ItemDataSO : ScriptableObject
 {
+    [Header("Base")]
     public int id;
     public string itemName;
     public string description;
@@ -21,9 +22,14 @@ public class ItemDataSO : ScriptableObject
     public float price;
     public bool equipment = false;
 
+    [Header("Equip")]
     public float atk;
     public float def;
 
+    [Header("Heal")]
     public float healAmount;
     public float duration;
+
+    [Header("Food")]
+    public float hungerRestore;
 }
