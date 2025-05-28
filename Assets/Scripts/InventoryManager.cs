@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -25,7 +25,6 @@ public class InventoryManager : MonoBehaviour
     private HarvestData Harvest => harvest;
     
     #endregion
-
     private void Awake()
     {
         if (instance == null)
@@ -49,6 +48,6 @@ public class InventoryManager : MonoBehaviour
         Controller player = FindObjectOfType<Controller>();
         player.AddItem(itemData);
 
-        Debug.Log($"[�κ��丮] {itemData.itemName}");
+        Debug.Log($"[인벤토리] {itemData.itemName}");
     }
 }
