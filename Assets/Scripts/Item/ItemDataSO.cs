@@ -31,5 +31,5 @@ public class ItemDataSO : ScriptableObject
     public float duration;
 
     [Header("Food")]
-    public float hungerRestore;
+    public float hunger;
 }

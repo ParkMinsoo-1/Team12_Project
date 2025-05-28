@@ -10,6 +10,8 @@ public class Controller : MonoBehaviour
     private Rigidbody rb;
     private Vector3 moveInput;
 
+    bool interaction = false;
+
     private void Awake()
     {
         TestInventory tinventory = InventoryManager.Instance.inventory;
@@ -18,6 +20,7 @@ public class Controller : MonoBehaviour
     private void Update()
     {
         TestCode();
+        Getitem();
     }
     private void FixedUpdate()
     {
@@ -28,18 +31,30 @@ public class Controller : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right
         float v = Input.GetAxisRaw("Vertical");   // W/S or Up/Down
         moveInput = new Vector3(h, 0f, v).normalized;
+        interaction = Input.GetKeyDown(KeyCode.E);
 
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
-    private void OnTriggerEnter(Collider other)
+
+    void Getitem()
     {
-        Item item = other.GetComponent<Item>();
-        if (item != null)
+        Item item = GetComponent<Item>();
+        if (interaction && item != null)
         {
+            Debug.Log("Press E");
             InventoryManager.Instance.PickUp(item.ItemData);
-            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Item item = other.GetComponent<Item>();
+    //    if (interaction && item != null)
+    //    {
+    //        InventoryManager.Instance.PickUp(item.ItemData);
+    //        Destroy(other.gameObject);
+    //    }
+    //}
 
     // AddItem -> Inventory
     public void AddItem(ItemDataSO itemData)
