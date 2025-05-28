@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -24,6 +25,9 @@ public class InventoryManager : MonoBehaviour
     public TestInventory inventory;
     private TestInventory Inventory => inventory;
     #endregion
+    [SerializeField] private List<ItemDataSO> playerInven = new List<ItemDataSO>();
+
+
 
     private void Awake()
     {
@@ -42,11 +46,12 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+
     public void PickUp(ItemDataSO itemData)
     {
         // Item data for inventory
         Controller player = FindObjectOfType<Controller>();
-        player.AddItem(itemData);
+        playerInven.Add(itemData);
 
         Debug.Log($"[인벤토리] {itemData.itemName}");
     }
