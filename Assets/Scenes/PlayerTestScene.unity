@@ -704,6 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 0}
   _interaction: {fileID: 0}
+  _status: {fileID: 0}
 --- !u!114 &735572319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,7 +770,19 @@ MonoBehaviour:
     m_ActionId: 9b31df20-0e3c-44b4-8ca8-2ba3b76b0a49
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 735572322}
+        m_TargetAssemblyTypeName: Interaction, Assembly-CSharp
+        m_MethodName: OnInteractInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9152934f-31d0-48f4-93f8-fc612fa12e83
     m_ActionName: Player/Interaction[/Keyboard/e]
   - m_PersistentCalls:
@@ -793,9 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9c968d02a898443b557521d965efd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentValue: 0
-  startValue: 0
-  maxValue: 0
+  statusManager: {fileID: 0}
 --- !u!114 &735572322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,6 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curInteractObject: {fileID: 0}
+  itemData: {fileID: 0}
 --- !u!65 &735572323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1242,6 +1254,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1930864370
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2402579104155440704, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402579104155440704, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402579104155440704, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402579104155440704, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402579104155440704, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402579104155440704, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402579104155440704, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402579104155440704, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402579104155440704, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402579104155440704, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018951747532985740, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_Name
+      value: apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018951747532985740, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
 --- !u!4 &171956489899550982
 Transform:
   m_ObjectHideFlags: 0
@@ -3340,3 +3413,4 @@ SceneRoots:
   - {fileID: 735572316}
   - {fileID: 386420355}
   - {fileID: 918172818}
+  - {fileID: 1930864370}

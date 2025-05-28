@@ -50,9 +50,11 @@ public class InventoryManager : MonoBehaviour
     public void PickUp(ItemDataSO itemData)
     {
         // Item data for inventory
-        Controller player = FindObjectOfType<Controller>();
+        //Controller player = FindObjectOfType<Controller>();
         playerInven.Add(itemData);
+        Debug.Log($"인벤토리에 {itemData.itemName} 이 추가되었습니다.");
+        
 
-        Debug.Log($"[�κ��丮] {itemData.itemName}");
+        //Debug.Log($"[�κ��丮] {itemData.itemName}");
     }
 }
