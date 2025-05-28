@@ -14,12 +14,12 @@ public class SpwanItem : MonoBehaviour
 
     void SpawnItem()
     {
-        for(int j = 1; j < spawnAreaArr.Length; j++)
+        for (int j = 1; j < spawnAreaArr.Length; j++)
         {
             for (int i = 0; i < 5; i++)
             {
-                float x = Random.Range(0, spawnAreaArr[j].localScale.x) / spawnAreaArr[j].localScale.x - 0.5f;
-                float z = Random.Range(0, spawnAreaArr[j].localScale.z) / spawnAreaArr[j].localScale.z - 0.5f;
+                float x = Random.Range(-0.5f, 0.5f);
+                float z = Random.Range(-0.5f, 0.5f);
 
                 Vector3 spawnVec = new Vector3(x, 0, z);
                 Vector3 spawnScale = new Vector3(1 / spawnAreaArr[j].localScale.x, 1, 1 / spawnAreaArr[j].localScale.z);
@@ -28,6 +28,6 @@ public class SpwanItem : MonoBehaviour
                 go.transform.localPosition = spawnVec;
                 go.transform.localScale = spawnScale;
             }
-        }        
+        }
     }
 }
