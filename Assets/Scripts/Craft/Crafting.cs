@@ -8,6 +8,12 @@ public class Crafting : MonoBehaviour
 
     public bool Craft(Recipe recipe)
     {
+        if (playerInventory == null)
+        {
+            playerInventory = InventoryManager.Instance;
+            
+        }
+        
         if (playerInventory.HasResource(recipe.resources))
         {
             playerInventory.RemoveResource(recipe.resources);
