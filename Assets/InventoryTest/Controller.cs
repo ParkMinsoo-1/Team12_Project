@@ -27,12 +27,11 @@ public class Controller : MonoBehaviour
     }
     void TestCode()
     {
-        float h = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right
-        float v = Input.GetAxisRaw("Vertical");   // W/S or Up/Down
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
         moveInput = new Vector3(h, 0f, v).normalized;
-        interaction = Input.GetKeyDown(KeyCode.E);
 
-        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
