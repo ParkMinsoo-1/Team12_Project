@@ -24,10 +24,6 @@ public class Controller : MonoBehaviour
     {
         TestCode();
     }
-    private void FixedUpdate()
-    {
-
-    }
     void TestCode()
     {
         float h = Input.GetAxisRaw("Horizontal");

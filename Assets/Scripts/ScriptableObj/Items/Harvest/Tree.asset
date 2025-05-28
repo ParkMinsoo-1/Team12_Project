@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tree
   m_EditorClassIdentifier: 
   maxHp: 100
-  harvestName: 1
-  requiredTool: 2
-  dropItem: {fileID: 11400000, guid: 2935dab9c31d15e418b00aa90f260c68, type: 2}
-  dropCount: 2
+  harvestName: 0
+  requiredTool: 1
+  dropItem: {fileID: 11400000, guid: 2cb73f76f19f71d42924d6e967c03b77, type: 2}
+  dropCount: 3
