@@ -11,10 +11,10 @@ public class PlayerStatus : MonoBehaviour
     Status hunger { get { return statusManager.hunger;}}
     Status stamina { get { return statusManager.stamina;}}
 
-    private void Update()
+    public void update()
     {
-        hunger.Subtract((int)(hunger.passiveValue * Time.deltaTime));
-        stamina.Subtract((int)(stamina.passiveValue * Time.deltaTime));
+        hunger.Subtract(hunger.passiveValue);
+        stamina.Subtract(stamina.passiveValue);
     }
 
     public void Heal(int value)
