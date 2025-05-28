@@ -17,11 +17,12 @@ MonoBehaviour:
   description: this is Food
   icon: {fileID: 0}
   itemtype: 4
+  toolType: 0
   maxStack: 100
-  price: 5
+  price: 15
   equipment: 0
   atk: 0
   def: 0
-  healAmount: 0
-  duration: 0
-  hungerRestore: 20
+  healAmount: 5
+  duration: 5
+  hunger: 15
