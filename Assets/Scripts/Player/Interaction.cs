@@ -5,7 +5,10 @@ using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour
 {
+    public Item item;
     public GameObject curInteractObject;
+    public ItemDataSO itemData;
+   
     
     // 상호작용 아이템 인식 방법 변경
     // public void Update()
@@ -43,24 +46,36 @@ public class Interaction : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        curInteractObject = other.gameObject;
-        if (curInteractObject != null && curInteractObject.layer == LayerMask.NameToLayer("ItemObject"))
+        item = other.gameObject.GetComponent<Item>();
+        if (item != null)
         {
-            Debug.Log("상호작용 가능한 아이템이 있습니다." + curInteractObject.name);
+            curInteractObject = item.gameObject;
+            if (curInteractObject != null && curInteractObject.layer == LayerMask.NameToLayer("ItemObject"))
+            {
+                itemData = item.ItemData;
+                Debug.Log("상호작용 가능한 아이템이 있습니다." + curInteractObject.name);
+            }
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
+        item = null;
         curInteractObject = null;
+        itemData = null;
         Debug.Log("상호작용 가능한 아이템이 없습니다.");
     }
     public void OnInteractInput(InputAction.CallbackContext context) //아이템 상호작용 함수 받아오고 연결할 예정
     {
         if(context.phase == InputActionPhase.Started && curInteractObject != null)
         {
-            //Interaction 함수
-            curInteractObject = null;
+            if (curInteractObject != null)
+            {
+                InventoryManager.Instance.PickUp(itemData);
+                item.RemoveItem();
+                item = null;
+                curInteractObject = null;
+                itemData = null;
+            }
         }
     }
 
