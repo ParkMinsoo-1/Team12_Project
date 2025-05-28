@@ -20,7 +20,6 @@ public class Controller : MonoBehaviour
     private void Update()
     {
         TestCode();
-        Getitem();
     }
     private void FixedUpdate()
     {
@@ -36,25 +35,15 @@ public class Controller : MonoBehaviour
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
 
-    void Getitem()
+    private void OnTriggerEnter(Collider other)
     {
-        Item item = GetComponent<Item>();
+        Item item = other.GetComponent<Item>();
         if (interaction && item != null)
         {
-            Debug.Log("Press E");
             InventoryManager.Instance.PickUp(item.ItemData);
-            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    Item item = other.GetComponent<Item>();
-    //    if (interaction && item != null)
-    //    {
-    //        InventoryManager.Instance.PickUp(item.ItemData);
-    //        Destroy(other.gameObject);
-    //    }
-    //}
 
     // AddItem -> Inventory
     public void AddItem(ItemDataSO itemData)
