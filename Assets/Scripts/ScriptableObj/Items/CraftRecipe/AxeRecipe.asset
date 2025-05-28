@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AxeRecipe
   m_EditorClassIdentifier: 
   resources:
-  - {fileID: 0}
-  - {fileID: 0}
-  result: {fileID: 0}
+  - {fileID: 11400000, guid: 2935dab9c31d15e418b00aa90f260c68, type: 2}
+  - {fileID: 11400000, guid: 2cb73f76f19f71d42924d6e967c03b77, type: 2}
+  result: {fileID: 11400000, guid: de6f0a22ff263c44b90e484cb5e45f63, type: 2}

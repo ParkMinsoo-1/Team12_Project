@@ -709,6 +709,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4580066644812944118, guid: 8d5b7a851194da149829da28612cbaeb, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -837,6 +841,10 @@ PrefabInstance:
     - target: {fileID: 5319173154218175276, guid: b74599db651f2334da3ab0e9152f3658, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319173154218175276, guid: b74599db651f2334da3ab0e9152f3658, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1033,6 +1041,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 20ed966d-3a8a-4748-8f7f-1bccea43eb7f
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 735572322}
+        m_TargetAssemblyTypeName: Interaction, Assembly-CSharp
+        m_MethodName: OnCraftInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1d2400ec-5620-486f-9ae1-343eb357534d
+    m_ActionName: Player/Cract[/Keyboard/c]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1508,6 +1532,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4018951747532985740, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1521,9 +1549,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 268534679673849486, guid: 2ef8605569832cf4ca255b7a6ab186f8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2909344611994085384, guid: 2ef8605569832cf4ca255b7a6ab186f8, type: 3}
       propertyPath: m_Name
       value: workbench-grind
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909344611994085384, guid: 2ef8605569832cf4ca255b7a6ab186f8, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2909344611994085384, guid: 2ef8605569832cf4ca255b7a6ab186f8, type: 3}
       propertyPath: m_TagString
