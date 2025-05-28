@@ -42,7 +42,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void PickUp(ItemScriptable itemData)
+    public void PickUp(ItemDataSO itemData)
     {
         // Item data for inventory
         Controller player = FindObjectOfType<Controller>();

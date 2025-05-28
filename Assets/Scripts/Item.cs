@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private ItemScriptable itemData;
-    public ItemScriptable ItemData => itemData;
+    [SerializeField] private ItemDataSO itemData;
+    public ItemDataSO ItemData => itemData;
 
     private void Update()
     {

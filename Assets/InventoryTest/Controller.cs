@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Controller : MonoBehaviour
 {
-    [SerializeField] private List<ItemScriptable> testInventory = new List<ItemScriptable>();
+    [SerializeField] private List<ItemDataSO> testInventory = new List<ItemDataSO>();
 
     public float moveSpeed = 5f;
     private Rigidbody rb;
@@ -42,7 +42,7 @@ public class Controller : MonoBehaviour
     }
 
     // AddItem -> Inventory
-    public void AddItem(ItemScriptable itemData)
+    public void AddItem(ItemDataSO itemData)
     {
         testInventory.Add(itemData);
         Debug.Log($"[Player] 아이템 추가됨: {itemData.itemName}");

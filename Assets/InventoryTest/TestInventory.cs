@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class TestInventory : MonoBehaviour
 {
-    [SerializeField] private List<ItemScriptable> testInventory = new List<ItemScriptable>();
+    [SerializeField] private List<ItemDataSO> testInventory = new List<ItemDataSO>();
 }
