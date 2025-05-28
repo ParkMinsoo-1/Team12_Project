@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tree
   m_EditorClassIdentifier: 
   id: 11
-  itemName: Stone
-  description: this is Stone
+  itemName: Tree
+  description: this is Tree
   icon: {fileID: 0}
   itemtype: 3
   maxStack: 100
@@ -24,4 +24,4 @@ MonoBehaviour:
   def: 0
   healAmount: 0
   duration: 0
-  hungerRestore: 0
+  hunger: 0

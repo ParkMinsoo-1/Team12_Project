@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   id: 1
-  itemName: wood
+  itemName: Wood
   description: this is Wood
   icon: {fileID: 0}
   itemtype: 3
@@ -24,3 +24,4 @@ MonoBehaviour:
   def: 0
   healAmount: 0
   duration: 0
+  hunger: 0
