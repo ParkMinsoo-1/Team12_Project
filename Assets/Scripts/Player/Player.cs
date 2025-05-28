@@ -7,11 +7,13 @@ public class Player : MonoBehaviour
 {
     public PlayerController _playerController;
     public Interaction _interaction;
+    public PlayerStatus _Status;
     private void Awake()
     {
         PlayerManager.Instance.Player = this;
         _playerController = GetComponent<PlayerController>();
         _interaction = GetComponent<Interaction>();
+        
     }
 
 }
