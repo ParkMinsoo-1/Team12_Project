@@ -8,7 +8,7 @@ public class CameraScript : MonoBehaviour
     void LateUpdate()
     {
         Vector3 direction = (player.transform.position - transform.position).normalized;
-        RaycastHit[] hits = Physics.RaycastAll(transform.position, direction, Mathf.Infinity, 1 << 6);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, direction, Mathf.Infinity, 1 << 7);
 
         if (hits == null) return;
 
