@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2689488750816683491}
   - component: {fileID: 6696842698867365853}
   - component: {fileID: 3789216239359857179}
+  - component: {fileID: 1544648982750163228}
   m_Layer: 0
   m_Name: tree_pineTallC
   m_TagString: Untagged
@@ -122,3 +123,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harvestData: {fileID: 11400000, guid: a879a86d57a5d0d4f9105b69fa0e2c2e, type: 2}
   currentHp: 0
+--- !u!95 &1544648982750163228
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815955529496553773}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd980724304f39648b1ed2fe39c6cb4a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
