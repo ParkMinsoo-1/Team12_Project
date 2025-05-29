@@ -14,7 +14,7 @@ public class Controller : MonoBehaviour
 
     private void Awake()
     {
-        TestInventory tinventory = InventoryManager.Instance.inventory;
+        //TestInventory tinventory = InventoryManager.Instance.inventory;
         rb = GetComponent<Rigidbody>();
     }
     private void Update()
