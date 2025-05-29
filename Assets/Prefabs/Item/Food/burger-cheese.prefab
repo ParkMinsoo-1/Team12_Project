@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2595238269232185459}
   - component: {fileID: 3368722716633591329}
   - component: {fileID: -7556855883397241332}
+  - component: {fileID: 3118126929395957973}
   m_Layer: 0
   m_Name: burger-cheese
   m_TagString: Untagged
@@ -72,6 +73,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &3118126929395957973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860614671586343645}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &2074407835126987682
 GameObject:
   m_ObjectHideFlags: 0

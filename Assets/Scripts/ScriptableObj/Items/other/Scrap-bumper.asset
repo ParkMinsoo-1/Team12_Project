@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5021a69bb0cde44b10adf6fac49733, type: 3}
+  m_Name: Scrap-bumper
+  m_EditorClassIdentifier: 
+  id: 18
+  itemName: Scrap-bumper
+  description: this is Scrap-bumper
+  icon: {fileID: 0}
+  itemtype: 0
+  toolType: 0
+  maxStack: 1
+  price: 2
+  equipment: 0
+  atk: 0
+  def: 0
+  healAmount: 0
+  duration: 0
+  hunger: 0
