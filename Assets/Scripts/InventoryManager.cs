@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -75,6 +76,35 @@ public class InventoryManager : MonoBehaviour
         foreach (var usedItem in usedItems)
         {
             playerInven.Remove(usedItem);
+        }
+    }
+
+    public bool SpendResource(string[] resourceName, int[] resourceCount)
+    {
+        int length = resourceName.Length;
+        int[] resourcePlayerHaveCnt = new int[length];
+        bool isResourceEnough = true;
+
+        for (int i = 0; i < length; i++)
+        {
+            resourcePlayerHaveCnt[i] = playerInven.Where(x => x.itemName == resourceName[i]).Count();
+            if (resourcePlayerHaveCnt[i] >= resourceCount[i] == false)
+            {
+                isResourceEnough = true; //flase로
+            }
+        }
+
+        if (isResourceEnough == true)
+        {
+            //for (int i = 0; i < length; i++)
+            //{
+            //    playerInven.Remove(playerInven.Where(x => x.itemName == resourceName[i]).Last());
+            //}
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
