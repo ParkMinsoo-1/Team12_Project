@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public enum ToolType
-{
-    None,
-    Axe,
-    Pickaxe,
-    Knife
-}
+//public enum ToolType
+//{
+//    None,
+//    Axe,
+//    Pickaxe,
+//    Knife
+//}
 public enum HarvestName
 {
     Tree,
@@ -18,7 +18,7 @@ public class HarvestableObjectSO : ScriptableObject
     [Header("Base")]
     public int maxHp;
     public HarvestName harvestName;
-    public ToolType requiredTool;
+    //public ToolType requiredTool;
     public ItemDataSO dropItem;
     public int dropCount;
 }
