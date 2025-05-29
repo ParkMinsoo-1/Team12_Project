@@ -8,8 +8,7 @@ public class LobbyUi : MonoBehaviour
     public GameObject[] taps;
     //게임 버튼들을 참조하는 필드
     public GameObject[] layouts;
-    public GameObject playerObj;
-    public GameObject items;
+    public GameObject[] tutorialObjects;
 
     public void Awake()
     {
@@ -19,8 +18,10 @@ public class LobbyUi : MonoBehaviour
 
     public void OnStartButtonPress()
     {
-        playerObj.SetActive(true);
-        items.SetActive(true);
+        foreach (GameObject to in tutorialObjects)
+        {
+            to.SetActive(true);
+        }
 
         GameObject cam = FindObjectOfType<Camera>().gameObject;
         Camera mainCam = cam.GetComponent<Camera>();
@@ -30,14 +31,15 @@ public class LobbyUi : MonoBehaviour
 
         mainCam.orthographicSize = 20f;
 
-
-
         cam.AddComponent<FollowCamera>();
         FollowCamera cam2 = cam.GetComponent<FollowCamera>();
         cam2.target = FindObjectOfType<Player>().transform;
         cam2.offset = new Vector3(-30f, 45f, -30f);
 
-        CloseLobbyUi();
+        UiManager.Instance.mainUi.UiTabControl("OpenMain");
+        Destroy(this.gameObject);
+
+        //CloseLobbyUi();
 
     //SceneManager.LoadScene("SampleScene");
     }
