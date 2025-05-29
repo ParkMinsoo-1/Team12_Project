@@ -93,6 +93,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnAttackInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            _animationController.Attack();
+        }
+    }
+
 
     //마우스 위치에 따른 플레이어 방향 전환
     // void Rotate()
