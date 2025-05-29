@@ -7,9 +7,45 @@ using UnityEngine.UI;
 
 public class MainUi : MonoBehaviour
 {
-    public Image[] statBars;
-    public TMP_Text[] statTexts;
+    public GameObject mainLayout;
+    public GameObject infoLayout;
+    public GameObject inventoryLayout;
 
 
-
+    public void UiTabControl(string order)
+    {
+        switch (order)
+        {
+            case "OpenMain":
+                mainLayout.SetActive(true);
+                break;
+            case "OpenInven":
+                mainLayout.SetActive(false);
+                inventoryLayout.SetActive(true);
+                break;
+            case "CloseInven":
+                mainLayout.SetActive(true);
+                inventoryLayout.SetActive(false);
+                break;
+            case "CloseAll":
+                mainLayout.SetActive(false);
+                infoLayout.SetActive(false);
+                inventoryLayout.SetActive(false);
+                break;
+        }
+    }
+    public void AddUiItem(ItemDataSO itemData)
+    {
+        InventoryUi invenUi = inventoryLayout.GetComponent<InventoryUi>();
+        invenUi.SettingUiItem(itemData);
+    }
+    public void UpdateInfoUi(string? info, bool onOff)
+    {
+        InfoUi infoUi = infoLayout.GetComponent<InfoUi>();
+        if (info != null)
+        {
+            infoUi.SetInfoUi(info);
+        }
+        infoUi.objectInfoPanel.SetActive(onOff);
+    }
 }
