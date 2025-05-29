@@ -23,15 +23,18 @@ public class NPC : MonoBehaviour
     public float maxWanderDistance;
     public float minWanderWaitTime;
     public float maxWanderWaitTime;
+    Animator animator;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        SetState(AiState.wandering);
+        animator = GetComponentInChildren<Animator>();
+        SetState(AiState.wandering);        
     }
 
     void Update()
     {
+        animator.SetBool("isRun", aiState != AiState.idle);
         PassiveUpdate();
     }
 
@@ -44,10 +47,12 @@ public class NPC : MonoBehaviour
             case AiState.idle:
                 agent.speed = walkSpeed;
                 agent.isStopped = true;
+                
                 break;
             case AiState.wandering:
                 agent.speed = walkSpeed;
                 agent.isStopped = false;
+                
                 break;
         }
     }
@@ -64,7 +69,7 @@ public class NPC : MonoBehaviour
     void WanderToNewLocation()
     {
         if (aiState != AiState.idle) return;
-
+        
         SetState(AiState.wandering);
         agent.SetDestination(WanderDestination());
     }
@@ -73,7 +78,7 @@ public class NPC : MonoBehaviour
     {
         NavMeshHit hit;
         NavMesh.SamplePosition(transform.position + (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)), out hit, maxWanderDistance, NavMesh.AllAreas);
-
+        
         return hit.position;
     }
 }
