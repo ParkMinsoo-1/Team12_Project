@@ -19,7 +19,7 @@
 	],
 	[
 		{
-		"ResourcesName": ["Wood"],
+		"ResourcesName": ["Stone"],
 		"ResourcesCount": [5]
 		},
 		{
@@ -28,7 +28,7 @@
 		},
 		{
 		"ResourcesName": ["Wood","Stone"],
-		"ResourcesCount": [8,8]
+		"ResourcesCount": [8,10]
 		},
 		{
 		"ResourcesName": ["Wood","Stone"],
@@ -38,19 +38,37 @@
 	[
 		{
 		"ResourcesName": ["Wood"],
-		"ResourcesCount": [5]
-		},
-		{
-		"ResourcesName": ["Wood"],
-		"ResourcesCount": [10]
+		"ResourcesCount": [8]
 		},
 		{
 		"ResourcesName": ["Wood","Stone"],
-		"ResourcesCount": [8,8]
+		"ResourcesCount": [10,3]
 		},
 		{
 		"ResourcesName": ["Wood","Stone"],
-		"ResourcesCount": [15,10]
+		"ResourcesCount": [6,8]
+		},
+		{
+		"ResourcesName": ["Wood","Stone"],
+		"ResourcesCount": [15,13]
+		},
+	],
+	[
+		{
+		"ResourcesName": ["Wood","Stone"],
+		"ResourcesCount": [5,5]
+		},
+		{
+		"ResourcesName": ["Wood","Stone"],
+		"ResourcesCount": [5,5]
+		},
+		{
+		"ResourcesName": ["Wood","Stone"],
+		"ResourcesCount": [5,5]
+		},
+		{
+		"ResourcesName": ["Wood","Stone"],
+		"ResourcesCount": [5,5]
 		},
 	]
 ]

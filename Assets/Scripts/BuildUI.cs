@@ -5,31 +5,33 @@ using UnityEngine;
 public class BuildUI : MonoBehaviour
 {
     [SerializeField] BuildableObject buildableObject;
-    TextMeshProUGUI[] textUIs;
-    //private void Start()
-    //{
-    //    int BuildableObjCount = gameObject.transform.childCount;
-    //    StringBuilder stringBuilder = new StringBuilder();
+    TextMeshProUGUI[] textUIs;   
 
-    //    for (int i = 0; i < BuildableObjCount; i++)
-    //    {
-    //        int level = buildableObject.level[i];
-    //        for (int j = 0; j < buildableObject.resourceData[i][level].ResourcesName.Length; j++)
-    //        {
-    //            stringBuilder.Append($"{buildableObject.resourceData[i][level].ResourcesName[j]} X {buildableObject.resourceData[i][level].ResourcesCount[j]}\n");
-    //        }
-    //        stringBuilder.Remove(stringBuilder.Length - 1, 1);
+    public void SetBuildUI()
+    {
+        int BuildableObjCount = gameObject.transform.childCount;
+        StringBuilder stringBuilder = new StringBuilder();
+        
+        for (int i = 0; i < BuildableObjCount; i++)
+        {
+            int level = buildableObject.level[i];
 
-    //        string buildText = level == 0 ? "Build" : "Upgrade";
+            for (int j = 0; j < buildableObject.resourceData[i][level].ResourcesName.Length; j++)
+            {
+                stringBuilder.Append($"{buildableObject.resourceData[i][level].ResourcesName[j]} X {buildableObject.resourceData[i][level].ResourcesCount[j]}\n");
+            }
+            stringBuilder.Remove(stringBuilder.Length - 1, 1);
 
-    //        textUIs = gameObject.transform.GetChild(i).GetComponentsInChildren<TextMeshProUGUI>();
-            
-    //        textUIs[0].text = level.ToString();
-    //        textUIs[1].text = stringBuilder.ToString();
-    //        textUIs[2].text = buildText;
-    //    }
-    //}
+            string buildText = level == 0 ? "Build" : "Upgrade";
 
+            textUIs = gameObject.transform.GetChild(i).GetComponentsInChildren<TextMeshProUGUI>();
+
+            textUIs[0].text = level.ToString();             //수정하고 싶은데 마땅히 떠오르지 않음
+            textUIs[1].text = stringBuilder.ToString();
+            textUIs[2].text = buildText;
+            stringBuilder.Remove(0, stringBuilder.Length);
+        }
+    }
     public void BuildButton1()
     {
         buildableObject.Build(0);
