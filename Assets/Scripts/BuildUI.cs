@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class BuildUI : MonoBehaviour
 {
     [SerializeField] BuildableObject buildableObject;
+    [SerializeField] List<GameObject> buildableObjects = new List<GameObject>();
     TextMeshProUGUI[] textUIs;   
 
     public void SetBuildUI()
@@ -34,21 +36,21 @@ public class BuildUI : MonoBehaviour
     }
     public void BuildButton1()
     {
-        buildableObject.Build(0);
+        buildableObject.Build(0, buildableObjects[0]);
     }
 
-   public void BuildButton1()
-   {
-       buildableObject.Build(0);
-   }
+    public void BuildButton2()
+    {
+        buildableObject.Build(1, buildableObjects[1]);
+    }
 
-   public void BuildButton2()
-   {
-       buildableObject.Build(1);
-   }
+    public void BuildButton3()
+    {
+        buildableObject.Build(2, buildableObjects[2]);
+    }
 
-   public void BuildButton3()
-   {
-       buildableObject.Build(2);
-   }
+    public void BuildButton4()
+    {
+        buildableObject.Build(3, buildableObjects[3]);
+    }
 }

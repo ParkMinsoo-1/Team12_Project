@@ -1,6 +1,7 @@
 using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
+using Newtonsoft.Json.Linq;
 
 public class ReadBuildData : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class ReadBuildData : MonoBehaviour
         }
 
         buildableObjectsData = JsonConvert.DeserializeObject<BuildableObjectsData[][]>(ReadString);
+
     }
 
     public BuildableObjectsData[][] GetReadData()
