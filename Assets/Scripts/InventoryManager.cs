@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -28,6 +27,7 @@ public class InventoryManager : MonoBehaviour
     private TestInventory Inventory => inventory;
     #endregion
     [SerializeField] private List<ItemDataSO> playerInven = new List<ItemDataSO>();
+
 
 
 
@@ -60,6 +60,25 @@ public class InventoryManager : MonoBehaviour
         //Debug.Log($"[�κ��丮] {itemData.itemName}");
     }
 
+
+    public bool HasResource(List<ItemDataSO> requiredItems)
+    {
+        foreach (var requiredItem in requiredItems)
+        {
+            if (!playerInven.Contains(requiredItem))
+                return false;
+        }
+        return true;
+    }
+
+    public void RemoveResource(List<ItemDataSO> usedItems)
+    {
+        foreach (var usedItem in usedItems)
+        {
+            playerInven.Remove(usedItem);
+        }
+    }
+
     public bool SpendResource(string[] resourceName, int[] resourceCount)
     {
         int length = resourceName.Length;
@@ -86,6 +105,8 @@ public class InventoryManager : MonoBehaviour
         else
         {
             return false;
-        }        
+        }
     }
 }
+
+
