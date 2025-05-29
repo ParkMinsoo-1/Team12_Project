@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 movInput;
     public AnimationController _animationController;
     public bool isOpenInven = false;
+    public bool isAttack;
+    
 
     [Header ("Movement")]
     [SerializeField] private float movSpeed;
@@ -24,7 +26,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if (isAttack == false)
+        {
+            Move();
+        }
         //Rotate(); 로테이션 방식 변경
     }
     
@@ -33,11 +38,13 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Performed)
         {
             movInput = context.ReadValue<Vector2>();
+            
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
             movInput = Vector2.zero;
         }
+
     }
 /// <summary>
 /// Interaction 정보에 따른 처리가 필요해보임.
@@ -90,6 +97,15 @@ public class PlayerController : MonoBehaviour
                     UiManager.Instance.mainUi.UiTabControl("CloseInven");
                     break;
             }
+        }
+    }
+
+    public void OnAttackInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            _animationController.Attack();
+            isAttack = true;
         }
     }
 
