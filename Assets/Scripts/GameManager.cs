@@ -20,11 +20,11 @@ public class GameManager: MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ¾À ÀüÈ¯ ½Ã À¯ÁöÇÏ°í ½Í´Ù¸é »ç¿ë
+            DontDestroyOnLoad(gameObject); // ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Í´Ù¸ï¿½ ï¿½ï¿½ï¿½
         }
         else
         {
-            Destroy(gameObject); // Áßº¹ ¹æÁö
+            Destroy(gameObject); // ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½
         }
         isGameRunning = true;
     }
@@ -43,6 +43,10 @@ public class GameManager: MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown("3"))
+        {
+            SceneManager.LoadScene("LobbyScene");
+        }
 
     }
     private IEnumerator UpdateState()
