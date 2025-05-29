@@ -13,19 +13,21 @@ public class PlayerStatus : MonoBehaviour
 
     public void update()
     {
-        hunger.Subtract(hunger.passiveValue);
-        stamina.Subtract(stamina.passiveValue);
+        hunger.StatChange(hunger.passiveValue, "Subtract");
+        stamina.StatChange(stamina.passiveValue, "Subtract");
     }
 
     public void Heal(int value)
     {
-        health.Add(value);
+        health.StatChange(value, "Add");
     }
 
     public void Eat(int value)
     {
-        hunger.Add(value);
+        hunger.StatChange(value, "Add");
     }
+
+    
 
     public void Death()
     {

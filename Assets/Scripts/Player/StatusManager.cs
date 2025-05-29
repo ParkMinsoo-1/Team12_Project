@@ -8,8 +8,8 @@ public class StatusManager : MonoBehaviour
     public Status hunger;
     public Status stamina;
 
-    private void Start()
-    {
-        PlayerManager.Instance.Player._status.statusManager = this;
-    }
+    //private void Start()
+    //{
+    //    PlayerManager.Instance.Player._status.statusManager = this;
+    //}
 }
