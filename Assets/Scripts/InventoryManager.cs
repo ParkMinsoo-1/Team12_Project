@@ -21,13 +21,8 @@ public class InventoryManager : MonoBehaviour
     }
     #endregion
     #region TestManager
-    public ItemDataSO itemData;
-    private ItemDataSO ItemDataSO => itemData;
-    public HarvestData harvest;
-    private HarvestData Harvest => harvest;
-    
-    #endregion
     [SerializeField] private List<ItemDataSO> playerInven = new List<ItemDataSO>();
+    #endregion
     
 
 
@@ -52,13 +47,10 @@ public class InventoryManager : MonoBehaviour
 
     public void PickUp(ItemDataSO itemData)
     {
-        // Item data for inventory
-        //Controller player = FindObjectOfType<Controller>();
         playerInven.Add(itemData);
+        UiManager.Instance.mainUi.AddUiItem(itemData);
         Debug.Log($"인벤토리에 {itemData.itemName} 이 추가되었습니다.");
         
-
-        //Debug.Log($"[인벤토리] {itemData.itemName}");
     }
     
     
@@ -91,16 +83,16 @@ public class InventoryManager : MonoBehaviour
             resourcePlayerHaveCnt[i] = playerInven.Where(x => x.itemName == resourceName[i]).Count();
             if (resourcePlayerHaveCnt[i] >= resourceCount[i] == false)
             {
-                isResourceEnough = true; //flase로
+                isResourceEnough = false;
             }
         }
 
         if (isResourceEnough == true)
         {
-            //for (int i = 0; i < length; i++)
-            //{
-            //    playerInven.Remove(playerInven.Where(x => x.itemName == resourceName[i]).Last());
-            //}
+            for (int i = 0; i < length; i++)
+            {
+                playerInven.Remove(playerInven.Where(x => x.itemName == resourceName[i]).Last());
+            }
             return true;
         }
         else

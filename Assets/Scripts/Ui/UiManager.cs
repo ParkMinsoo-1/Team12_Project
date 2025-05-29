@@ -23,9 +23,6 @@ public class UiManager : MonoBehaviour
         }
     }
 
-
-
-
     private void Update()
     {
         if (Input.GetKeyDown("1"))
