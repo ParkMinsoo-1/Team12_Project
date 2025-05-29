@@ -83,16 +83,16 @@ public class InventoryManager : MonoBehaviour
             resourcePlayerHaveCnt[i] = playerInven.Where(x => x.itemName == resourceName[i]).Count();
             if (resourcePlayerHaveCnt[i] >= resourceCount[i] == false)
             {
-                isResourceEnough = false;
+                isResourceEnough = true;
             }
         }
 
         if (isResourceEnough == true)
         {
-            for (int i = 0; i < length; i++)
-            {
-                playerInven.Remove(playerInven.Where(x => x.itemName == resourceName[i]).Last());
-            }
+            //for (int i = 0; i < length; i++)
+            //{
+            //    playerInven.Remove(playerInven.Where(x => x.itemName == resourceName[i]).Last());
+            //}
             return true;
         }
         else
