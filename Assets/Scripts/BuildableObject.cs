@@ -6,6 +6,7 @@ public class BuildableObject : MonoBehaviour, IBuildableObject
     public BuildableObjectsData[][] resourceData;
     public int[] level { get; private set; } = new int[] { 0, 0, 0 };
 
+    
     void Start()
     {
         resourceData = ReadBuildData.GetReadData(); // resourceData[오브젝트타입][레벨]
@@ -13,7 +14,12 @@ public class BuildableObject : MonoBehaviour, IBuildableObject
 
     public void Build(int type)
     {
+        if (type == 3)
+        {
+            return;
+        }
         bool isNoramlOperation = InventoryManager.Instance.SpendResource(resourceData[type][level[type]].ResourcesName, resourceData[type][level[type]].ResourcesCount);
+
 
         if(isNoramlOperation == true) //
         {

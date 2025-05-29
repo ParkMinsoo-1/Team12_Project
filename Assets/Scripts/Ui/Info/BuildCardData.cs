@@ -15,4 +15,10 @@ public class BuildCardData : ScriptableObject
 
     [SerializeField] Sprite photo;
     public Sprite Photo => photo;
+
+    [SerializeField] int jsonDataIndex_1;
+    public int JsonDataIndex_1 => jsonDataIndex_1;
+
+    [SerializeField] int jsonDataIndex_2;
+    public int JsonDataIndex_2 => jsonDataIndex_2;
 }

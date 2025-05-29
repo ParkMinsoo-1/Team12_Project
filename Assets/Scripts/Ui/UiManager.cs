@@ -8,7 +8,8 @@ public class UiManager : MonoBehaviour
     public MainUi mainUi;
 
     public Player player;
-    public PlayerStatus ps; 
+    public PlayerStatus ps;
+    public BuildCardData cardData;
 
     private void Awake()
     {

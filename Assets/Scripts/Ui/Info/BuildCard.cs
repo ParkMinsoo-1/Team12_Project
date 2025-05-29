@@ -11,7 +11,7 @@ public class BuildCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public Image photo;
     public BuildCardData buildData;
     public InfoUi infoUi;
-    public Transform button;
+
     //스크립터블 오브젝트로 건설 가능한 정보를 받아옴
     private bool isMouseOn = false;
     //private Vector2 mouseInfoPos = Vector2.zero;
@@ -28,9 +28,9 @@ public class BuildCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     private void Start()
     {
-        //texts[0].text = buildData.Name;
-        //texts[1].text = buildData.Discription;
-        //photo.sprite = buildData.Photo;
+        texts[0].text = buildData.Name;
+        texts[1].text = buildData.Discription;
+        photo.sprite = buildData.Photo;
     }
     public void OnPointerEnter(PointerEventData eventData)
     //마우스포인터가 콜라이더처럼 자신의 범위안에 들어왔을 때
@@ -50,6 +50,28 @@ public class BuildCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         infoUi.ShowBuildInfo(false);
         infoUi = null;
 
+    }
+
+    public void UpgadeBuild()
+    {
+        BuildableObject buildableObject = FindObjectOfType<BuildableObject>();
+        string name = buildData.Name;
+        int a = 0;
+        switch (name)
+        {
+            case "Sweet Home":
+                a = 3;
+                buildableObject.Build(a);
+                infoUi.OnShowBuildPanel();
+                UiManager.Instance.mainUi.UpdateInfoUi(null, false);
+                GameManager.Instance.EndLobby();
+                return;
+            case "Work Bench":
+
+                break;
+        }
+        infoUi.ShowBuildInfo(false);
+        Destroy(this.gameObject);
     }
 
 

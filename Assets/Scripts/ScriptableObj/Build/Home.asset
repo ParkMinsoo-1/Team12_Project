@@ -15,3 +15,5 @@ MonoBehaviour:
   name: Sweet Home
   discription: The House you Can Stay and Rest
   photo: {fileID: 21300000, guid: 0fa1c1f881ca7eb498b4cce4dabbfe0b, type: 3}
+  jsonDataIndex_1: 3
+  jsonDataIndex_2: 0

@@ -4,8 +4,17 @@ using System.IO;
 
 public class ReadBuildData : MonoBehaviour
 {
-    BuildableObjectsData[][] buildableObjectsData;
-    void ReadData()
+    private static BuildableObjectsData[][] buildableObjectsData;
+    public static BuildableObjectsData[][] BuildablObjectData 
+    {
+        get 
+        { 
+            if (buildableObjectsData == null) ReadData();
+            return buildableObjectsData;
+        }
+    }
+
+    static void ReadData()
     {
         string ReadString;
         string filePath = Application.dataPath + "/json/BuildResourcesData.json";
