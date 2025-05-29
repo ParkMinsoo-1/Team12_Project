@@ -7057,7 +7057,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a73a82f80d76647907910b3bc5a0e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
   curInteractObject: {fileID: 0}
+  itemData: {fileID: 0}
 --- !u!114 &1262989878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9542,7 +9544,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: db71aa942bef043479aea18e620e69f6, type: 2}
+  - {fileID: 2100000, guid: fa53b37a11b589947b3fc25aa852390b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
