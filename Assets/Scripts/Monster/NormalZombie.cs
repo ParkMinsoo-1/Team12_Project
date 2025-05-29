@@ -23,7 +23,7 @@ public class NormalZombie : MonoBehaviour
 
     private void MakeDecision()
     {
-
+        
     }
     
 

@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour
 
     private void Awake()
     {
+        //TestInventory tinventory = InventoryManager.Instance.inventory;
         rb = GetComponent<Rigidbody>();
     }
     private void Start()
@@ -46,6 +47,6 @@ public class Controller : MonoBehaviour
     public void AddItem(ItemDataSO itemData)
     {
         testInventory.Add(itemData);
-        Debug.Log($"[Player] ¾ÆÀÌÅÛ Ãß°¡µÊ: {itemData.itemName}");
+        Debug.Log($"[Player] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½: {itemData.itemName}");
     }
 }

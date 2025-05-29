@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RawMeat
   m_EditorClassIdentifier: 
   id: 11
-  itemName: Rawmeat
-  description: this is Rawmeat
+  itemName: Tree
+  description: this is Tree
   icon: {fileID: 0}
   itemtype: 4
   toolType: 0
@@ -25,4 +25,4 @@ MonoBehaviour:
   def: 0
   healAmount: 20
   duration: 0
-  hunger: 15
+  hunger: 0

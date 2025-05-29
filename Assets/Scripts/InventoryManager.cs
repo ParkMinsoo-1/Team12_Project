@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -25,6 +27,11 @@ public class InventoryManager : MonoBehaviour
     private HarvestData Harvest => harvest;
     
     #endregion
+    [SerializeField] private List<ItemDataSO> playerInven = new List<ItemDataSO>();
+    
+
+
+
     private void Awake()
     {
         if (instance == null)
@@ -42,12 +49,63 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+
     public void PickUp(ItemDataSO itemData)
     {
         // Item data for inventory
-        Controller player = FindObjectOfType<Controller>();
-        player.AddItem(itemData);
+        //Controller player = FindObjectOfType<Controller>();
+        playerInven.Add(itemData);
+        Debug.Log($"인벤토리에 {itemData.itemName} 이 추가되었습니다.");
+        
 
-        Debug.Log($"[인벤토리] {itemData.itemName}");
+        //Debug.Log($"[인벤토리] {itemData.itemName}");
+    }
+    
+    
+    public bool HasResource(List<ItemDataSO> requiredItems)
+    {
+        foreach (var requiredItem in requiredItems)
+        {
+            if (!playerInven.Contains(requiredItem))
+                return false;
+        }
+        return true;
+    }
+
+    public void RemoveResource(List<ItemDataSO> usedItems)
+    {
+        foreach (var usedItem in usedItems)
+        {
+            playerInven.Remove(usedItem);
+        }
+    }
+
+    public bool SpendResource(string[] resourceName, int[] resourceCount)
+    {
+        int length = resourceName.Length;
+        int[] resourcePlayerHaveCnt = new int[length];
+        bool isResourceEnough = true;
+
+        for (int i = 0; i < length; i++)
+        {
+            resourcePlayerHaveCnt[i] = playerInven.Where(x => x.itemName == resourceName[i]).Count();
+            if (resourcePlayerHaveCnt[i] >= resourceCount[i] == false)
+            {
+                isResourceEnough = true; //flase로
+            }
+        }
+
+        if (isResourceEnough == true)
+        {
+            //for (int i = 0; i < length; i++)
+            //{
+            //    playerInven.Remove(playerInven.Where(x => x.itemName == resourceName[i]).Last());
+            //}
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

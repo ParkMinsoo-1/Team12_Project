@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
@@ -16,14 +17,22 @@ public class DraggableUi : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private CanvasGroup itemGroup;
     //ui아이템 프리팹이 자식을 가질 수도 있기에
     //자식까지 
-    protected ItemData itemData;
+    [SerializeField] private UnityEngine.UI.Image itemIcon;
+    public ItemDataSO itemData;
 
     private void Awake()
     {
         inventoryUi = FindObjectOfType<InventoryUi>().transform;
         rect = GetComponent<RectTransform>();
         itemGroup = GetComponent<CanvasGroup>();  
-    
+        itemIcon = GetComponent<UnityEngine.UI.Image>();
+    }
+    private void Start()
+    {
+        if (itemData != null)
+        {
+            itemIcon.sprite = itemData.icon;
+        }
     }
 
     public void OnBeginDrag(PointerEventData evenData)

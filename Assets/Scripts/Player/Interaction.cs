@@ -5,7 +5,12 @@ using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour
 {
+    public Item item;
     public GameObject curInteractObject;
+    public ItemDataSO itemData;
+    public Crafting crafting;
+
+   
     
     // 상호작용 아이템 인식 방법 변경
     // public void Update()
@@ -43,26 +48,93 @@ public class Interaction : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        curInteractObject = other.gameObject;
-        if (curInteractObject != null && curInteractObject.layer == LayerMask.NameToLayer("ItemObject"))
+        // if (other != null)
+        // {
+        //     switch (other.gameObject.tag)
+        //     {
+        //         case "Item":
+        //             item = other.gameObject.GetComponent<Item>();
+        //             curInteractObject = item.gameObject;
+        //             itemData = item.ItemData;
+        //             Debug.Log("상호작용 가능한 아이템이 있습니다." + curInteractObject.name);
+        //             break;
+        //         case "Craft":
+        //             curInteractObject = other.gameObject.
+        //     }
+        // }
+        if (other != null)
         {
-            Debug.Log("상호작용 가능한 아이템이 있습니다." + curInteractObject.name);
+            if (other.tag == "Item")
+            {
+                item = other.gameObject.GetComponent<Item>();
+                curInteractObject = item.gameObject;
+                if (curInteractObject != null && curInteractObject.layer == LayerMask.NameToLayer("ItemObject"))
+                {
+                    itemData = item.ItemData;
+                    Debug.Log("상호작용 가능한 아이템이 있습니다." + curInteractObject.name);
+                }
+            }
+            if (other.tag == "Craft")
+            {
+                curInteractObject = other.gameObject;
+                Debug.Log("아이템 제작이 가능합니다.");
+            }
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
+        item = null;
         curInteractObject = null;
-        Debug.Log("상호작용 가능한 아이템이 없습니다.");
+        itemData = null;
     }
     public void OnInteractInput(InputAction.CallbackContext context) //아이템 상호작용 함수 받아오고 연결할 예정
     {
         if(context.phase == InputActionPhase.Started && curInteractObject != null)
         {
-            //Interaction 함수
-            curInteractObject = null;
+            if (itemData != null)
+            {
+                InventoryManager.Instance.PickUp(itemData);
+                item.RemoveItem();
+                item = null;
+                curInteractObject = null;
+                itemData = null;
+            }
         }
     }
+
+    public void OnCraftInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started && curInteractObject != null)
+        {
+            if (!curInteractObject.CompareTag("Craft"))
+            {
+                Debug.Log("제작이 불가능합니다.");
+            }
+            else
+            {
+                CraftStation station = curInteractObject.GetComponent<CraftStation>();
+                if (station != null && station.recipes != null)
+                {
+                    // Crafting 컴포넌트에서 제작 시도
+                    crafting = GetComponent<Crafting>();
+                    bool craft = crafting.Craft(station.recipes);
+                    if (craft)
+                    {
+                        Debug.Log("제작이 완료되었습니다.");
+                    }
+                    else
+                    {
+                        Debug.Log("제작이 실패하였습니다.");
+                    }
+                }
+                else
+                {
+                    Debug.Log("제작이 불가능합니다"); 
+                }
+            }
+        }
+    }
+    
 
 
 }

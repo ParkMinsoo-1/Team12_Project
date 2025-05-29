@@ -5,24 +5,33 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-
-  
-    [SerializeField] private int currentValue;
-    public int CurrentValue { get => currentValue; set => currentValue = value; } //넘겨주는 값
+    public StatusManager statusManager;
     
-    [SerializeField] private int startValue;
-    public int StartValue { get => startValue; set => startValue = value; } //넘겨주는 값
-    
-    [SerializeField] private int maxValue;
-    public int MaxValue { get => maxValue; set => maxValue = value; } //넘겨주는 값
+    Status health { get { return statusManager.health;}}
+    Status hunger { get { return statusManager.hunger;}}
+    Status stamina { get { return statusManager.stamina;}}
 
-    public void Add()
+    public void update()
     {
-        
+        hunger.StatChange(hunger.passiveValue, "Subtract");
+        stamina.StatChange(stamina.passiveValue, "Subtract");
     }
 
-    public void subtract()
+    public void Heal(int value)
     {
-        
+        health.StatChange(value, "Add");
     }
+
+    public void Eat(int value)
+    {
+        hunger.StatChange(value, "Add");
+    }
+
+    
+
+    public void Death()
+    {
+        //플레이어 죽음.
+    }
+
 }
