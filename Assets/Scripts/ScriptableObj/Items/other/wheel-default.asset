@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5021a69bb0cde44b10adf6fac49733, type: 3}
   m_Name: wheel-default
   m_EditorClassIdentifier: 
-  id: 17
-  itemName: Scrap-bolt
-  description: this is Scrap-bolt
+  id: 20
+  itemName: wheel-default
+  description: this is wheel-default
   icon: {fileID: 0}
-  itemtype: 0
+  itemtype: 3
   toolType: 0
   maxStack: 1
-  price: 2
+  price: 10
   equipment: 0
   atk: 0
   def: 0

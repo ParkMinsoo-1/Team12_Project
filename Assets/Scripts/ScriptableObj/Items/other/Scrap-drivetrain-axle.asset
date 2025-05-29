@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Scrap-drivetrain-axle
   description: this is utensil-spoon
   icon: {fileID: 0}
-  itemtype: 0
+  itemtype: 3
   toolType: 0
   maxStack: 1
-  price: 2
+  price: 8
   equipment: 0
   atk: 0
   def: 0

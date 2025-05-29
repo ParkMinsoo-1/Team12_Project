@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: utensil-knife
   description: this is utensil-knife
   icon: {fileID: 0}
-  itemtype: 0
+  itemtype: 2
   toolType: 0
   maxStack: 1
   price: 2

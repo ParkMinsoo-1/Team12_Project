@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Scrap-bolt
   description: this is Scrap-bolt
   icon: {fileID: 0}
-  itemtype: 0
+  itemtype: 3
   toolType: 0
   maxStack: 1
   price: 2
