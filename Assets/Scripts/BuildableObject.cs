@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
-
+public interface IBuildableObject
+{
+    void Build(int type, GameObject buildObject);
+    //void Upgrade(int type);
+    void Work();
+}
 public class BuildableObject : MonoBehaviour, IBuildableObject
 {
     [SerializeField] ReadBuildData ReadBuildData;
@@ -12,7 +17,7 @@ public class BuildableObject : MonoBehaviour, IBuildableObject
         resourceData = ReadBuildData.GetReadData(); // resourceData[오브젝트타입][레벨]
     }
 
-    public void Build(int type)
+    public void Build(int type, GameObject a)
     {
         if (type == 3)
         {

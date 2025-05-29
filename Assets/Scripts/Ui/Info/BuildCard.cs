@@ -61,7 +61,7 @@ public class BuildCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             case "Sweet Home":
                 a = 3;
-                buildableObject.Build(a);
+                buildableObject.Build(a,this.gameObject);
                 infoUi.OnShowBuildPanel();
                 UiManager.Instance.mainUi.UpdateInfoUi(null, false);
                 GameManager.Instance.EndLobby();
