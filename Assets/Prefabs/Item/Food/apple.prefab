@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 20ff42bcde0758c4b9cb301fc9e3a01a, type: 2}
+  itemRotate: 0
 --- !u!64 &681309030601464612
 MeshCollider:
   m_ObjectHideFlags: 0
