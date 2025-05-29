@@ -100,6 +100,7 @@ public class Interaction : MonoBehaviour
         {
             if (itemData != null)
             {
+                PlayerManager.Instance.Player._playerController._animationController.Gather();
                 InventoryManager.Instance.PickUp(itemData);
                 item.RemoveItem();
                 item = null;
