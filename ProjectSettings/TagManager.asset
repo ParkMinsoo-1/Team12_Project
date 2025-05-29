@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - Craft
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,7 @@ TagManager:
   - UI
   - ItemObject
   - EnvironmentObject
-  - 
-  - 
+  - CraftZone
   - 
   - 
   - 
