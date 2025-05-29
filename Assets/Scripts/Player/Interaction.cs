@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.GraphicsBuffer;
 
 public class Interaction : MonoBehaviour
 {
@@ -62,6 +63,11 @@ public class Interaction : MonoBehaviour
         //             curInteractObject = other.gameObject.
         //     }
         // }
+        if (other.TryGetComponent(out IInterctable target))
+        {
+            UiManager.Instance.mainUi.UpdateInfoUi(target.MyInfo(), true);
+        }
+
         if (other != null)
         {
             if (other.tag == "Item")
@@ -83,6 +89,7 @@ public class Interaction : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        UiManager.Instance.mainUi.UpdateInfoUi(null, false);
         item = null;
         curInteractObject = null;
         itemData = null;

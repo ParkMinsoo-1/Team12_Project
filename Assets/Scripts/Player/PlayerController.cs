@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector2 movInput;
     public AnimationController _animationController;
-    
+    public bool isOpenInven = false;
+
     [Header ("Movement")]
     [SerializeField] private float movSpeed;
 
@@ -73,8 +74,26 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime*rotateSpeed);
         }
     }
-    
-    
+    public void OnOpenInventory(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            switch (isOpenInven)
+            {
+                case false:
+                    isOpenInven = true;
+                    UiManager.Instance.mainUi.UiTabControl("OpenInven");
+                    break;
+
+                case true:
+                    isOpenInven = false;
+                    UiManager.Instance.mainUi.UiTabControl("CloseInven");
+                    break;
+            }
+        }
+    }
+
+
     //마우스 위치에 따른 플레이어 방향 전환
     // void Rotate()
     // {

@@ -19,17 +19,12 @@ public class MainUi : MonoBehaviour
             case "OpenMain":
                 mainLayout.SetActive(true);
                 break;
-            case "OpenInfo":
-                infoLayout.SetActive(true);
-                break;
             case "OpenInven":
+                mainLayout.SetActive(false);
                 inventoryLayout.SetActive(true);
                 break;
-
-            case "CloseInfo":
-                infoLayout.SetActive(false);
-                break;
             case "CloseInven":
+                mainLayout.SetActive(true);
                 inventoryLayout.SetActive(false);
                 break;
             case "CloseAll":
@@ -43,5 +38,14 @@ public class MainUi : MonoBehaviour
     {
         InventoryUi invenUi = inventoryLayout.GetComponent<InventoryUi>();
         invenUi.SettingUiItem(itemData);
+    }
+    public void UpdateInfoUi(string? info, bool onOff)
+    {
+        InfoUi infoUi = infoLayout.GetComponent<InfoUi>();
+        if (info != null)
+        {
+            infoUi.SetInfoUi(info);
+        }
+        infoUi.objectInfoPanel.SetActive(onOff);
     }
 }
