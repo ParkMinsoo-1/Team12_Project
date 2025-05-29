@@ -60,23 +60,7 @@ public class InventoryManager : MonoBehaviour
         //Debug.Log($"[�κ��丮] {itemData.itemName}");
     }
 
-    //public void SpendResource(string name1, string name2, int lv, Dictionary<string, int>[] UpgradeRequirement)
-    //{
-    //    int woodCount = playerInven.Where(x => x.itemName == name1).Count();
-    //    int stoneCount = playerInven.Where(x => x.itemName == name2).Count();
-
-    //    if (woodCount >= UpgradeRequirement[lv][name1] && stoneCount >= UpgradeRequirement[lv][name2])
-    //    {
-    //        playerInven.Remove(playerInven.Where(x => x.itemName == "Wood").Last());
-    //        playerInven.Remove(playerInven.Where(x => x.itemName == "Stone").Last());
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("자원부족");
-    //    }
-    //}
-
-    public void SpendResource(string[] resourceName, int[] resourceCount)
+    public bool SpendResource(string[] resourceName, int[] resourceCount)
     {
         int length = resourceName.Length;
         int[] resourcePlayerHaveCnt = new int[length];
@@ -87,20 +71,21 @@ public class InventoryManager : MonoBehaviour
             resourcePlayerHaveCnt[i] = playerInven.Where(x => x.itemName == resourceName[i]).Count();
             if (resourcePlayerHaveCnt[i] >= resourceCount[i] == false)
             {
-                isResourceEnough = false;
+                isResourceEnough = true; //flase로
             }
         }
 
         if (isResourceEnough == true)
         {
-            for (int i = 0; i < length; i++)
-            {
-                playerInven.Remove(playerInven.Where(x => x.itemName == resourceName[i]).Last());
-            }
+            //for (int i = 0; i < length; i++)
+            //{
+            //    playerInven.Remove(playerInven.Where(x => x.itemName == resourceName[i]).Last());
+            //}
+            return true;
         }
         else
         {
-            Debug.Log("자원부족");
-        }
+            return false;
+        }        
     }
 }

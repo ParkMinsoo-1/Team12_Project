@@ -1,41 +1,49 @@
-﻿
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BuildableObject : MonoBehaviour, IBuildableObject
 {
     [SerializeField] ReadBuildData ReadBuildData;
-    BuildableObjectsData[][] resourceData;
-    int level = 0;    
-    //Dictionary<string, int>[] UpgradeRequirement = { new Dictionary<string, int>(), new Dictionary<string, int>(), new Dictionary<string, int>(), new Dictionary<string, int>() };
-    //string key1 = "Wood";
-    //string key2 = "Stone";
+    public BuildableObjectsData[][] resourceData;
+    public int[] level { get; private set; } = new int[] { 0, 0, 0 };
+
     void Start()
     {
-        resourceData = ReadBuildData.GetReadData(); //[오브젝트번호][레벨]        
+        resourceData = ReadBuildData.GetReadData(); // resourceData[오브젝트타입][레벨]
     }
 
-    public void Build()
+    public void Build(int type)
     {
-        //InventoryManager.Instance.SpendResource(key1, key2, level, UpgradeRequirement);
-        Debug.Log(resourceData[0][0].ResourcesName[0]);
-        InventoryManager.Instance.SpendResource(resourceData[0][level].ResourcesName, resourceData[0][level].ResourcesCount); //오브젝트번호 받아오는거 수정
-        gameObject.SetActive(false);
-        level++;
+        bool isNoramlOperation = InventoryManager.Instance.SpendResource(resourceData[type][level[type]].ResourcesName, resourceData[type][level[type]].ResourcesCount);
+
+        if(isNoramlOperation == true) //
+        {
+            gameObject.transform.GetChild(type).gameObject.SetActive(true);
+            level[type]++;
+        }
+        else
+        {
+            Debug.Log("자원이 부족합니다."); // 추후 UI로 띄우도록 수정
+        }
     }
 
-    public void Upgrade()
+    public void Upgrade(int type)
     {
-        if(level == 4)
+        if(level[type] == 4)
         {
             //만랩
             return;
         }
 
-        //InventoryManager.Instance.SpendResource("Wood", "Stone", level, UpgradeRequirement);
-        InventoryManager.Instance.SpendResource(resourceData[0][level].ResourcesName, resourceData[0][level].ResourcesCount); //오브젝트번호 받아오는거 수정
+        bool isNoramlOperation = InventoryManager.Instance.SpendResource(resourceData[type][level[type]].ResourcesName, resourceData[type][level[type]].ResourcesCount);
 
-        level++;
+        if (isNoramlOperation == true)
+        {
+            level[type]++;
+        }
+        else
+        {
+            Debug.Log("자원이 부족합니다."); // 추후 UI로 띄우도록 수정
+        }
     }
 
     public void Work()
