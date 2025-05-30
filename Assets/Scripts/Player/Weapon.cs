@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public interface IDamageable
+{
+    void TakePhysicalDamage(int damageAmount);
+}
+
 public class Weapon : MonoBehaviour
 {
     private ItemDataSO itemData;

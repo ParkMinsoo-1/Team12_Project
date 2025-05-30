@@ -34,11 +34,18 @@ public class MainUi : MonoBehaviour
                 break;
         }
     }
-    public void AddUiItem(ItemDataSO itemData)
+    public void AddUiItem(ItemDataSO itemData) //  InventoryUI 상에 아이템 넣기
     {
         InventoryUi invenUi = inventoryLayout.GetComponent<InventoryUi>();
         invenUi.SettingUiItem(itemData);
     }
+
+    public void RemoveUIItem(ItemDataSO itemData)
+    {
+        InventoryUi invenUi = inventoryLayout.GetComponent<InventoryUi>();
+        invenUi.RemoveUIItem(itemData);
+    }
+    
     public void UpdateInfoUi(string? info, bool onOff)
     {
         InfoUi infoUi = infoLayout.GetComponent<InfoUi>();
