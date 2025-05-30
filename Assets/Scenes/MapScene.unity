@@ -446,6 +446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9155662e566286d4e9d531676a7bc4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placeData: {fileID: 11400000, guid: 0b3e466a8b6f36f4f823700e15958cc1, type: 2}
+  infoUi: {fileID: 0}
+  myCase: SceneStage
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +661,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9155662e566286d4e9d531676a7bc4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placeData: {fileID: 11400000, guid: 739a1243a488b494287c8a71e7aa1083, type: 2}
+  infoUi: {fileID: 0}
+  myCase: SceneStage
 --- !u!1 &1403750588
 GameObject:
   m_ObjectHideFlags: 0

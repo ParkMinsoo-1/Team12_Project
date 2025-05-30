@@ -28,6 +28,9 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public GameObject buildInfo;
 
     public GameObject SceneChangePanel;
+    public TMP_Text sceneNameText;
+    public TMP_Text sceneDiscriptionText;
+    public Image sceneIcon;
 
     public bool isBuilding = false;
 
@@ -174,6 +177,12 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                     }
                 }*/
 
+    }
+    public void SetSceneCard(BuildCardData data)
+    {
+        sceneNameText.text = data.Name;
+        sceneDiscriptionText.text = data.Discription; 
+        sceneIcon.sprite = data.Photo;
     }
     //public void CheckTheCard(BuildCardData data)
     //{
