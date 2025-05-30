@@ -34,6 +34,9 @@ public class GameManager: MonoBehaviour
     public bool isStateRunning = false;
     bool isGameRunning = false;
 
+    public Camera cam;
+
+
     private void Start()
     {
         isStateRunning = true;
@@ -131,13 +134,22 @@ public class GameManager: MonoBehaviour
                 break;
 
         }
-        PlayerSpawnSetting();
+        NextSceneSetting();
         yield break;
     }
-    public void PlayerSpawnSetting()
+    public void NextSceneSetting()
     {
         GameObject spawnPoint = GameObject.FindWithTag("SpawnPoint");
         PlayerManager.Instance.Player.transform.position = spawnPoint.transform.position;
+        if (nextState == GameState.InMap)
+        {
+            PlayerManager.Instance.Player.gameObject.SetActive(false);
+            FollowCamera playerCam = cam.GetComponent<FollowCamera>();
+            playerCam.transform.rotation = Quaternion.Euler(90, 0, 0);
+            playerCam.target = GameObject.FindWithTag("Map").transform;
+            cam.orthographicSize = 8f;
+            playerCam.offset = new Vector3(0, 2f, 0);
+        }
     }
     //public void EndLobby()
     //{
@@ -146,5 +158,7 @@ public class GameManager: MonoBehaviour
     public void StateEnd()
     {
         isStateRunning = false;
+        InfoUi infoUi = UiManager.Instance.mainUi.infoLayout.GetComponent<InfoUi>();
+        infoUi.OnShowScenePanel();
     }
 }

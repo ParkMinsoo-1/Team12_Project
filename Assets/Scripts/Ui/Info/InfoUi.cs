@@ -100,6 +100,7 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         isSceneSelect = false;
         SceneChangePanel.SetActive(false);
         objectInfoPanel.SetActive(true);
+        UiManager.Instance.mainUi.UpdateInfoUi(null, false);
     }
     public void OnShowBuildPanel()
     {

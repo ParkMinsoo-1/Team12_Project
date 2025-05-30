@@ -16066,6 +16066,7 @@ MonoBehaviour:
   currentState: 0
   nextState: 0
   isStateRunning: 0
+  cam: {fileID: 935675513}
 --- !u!4 &1631216835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 05b46ff2818c470459fe6ac65e628097, type: 3}
