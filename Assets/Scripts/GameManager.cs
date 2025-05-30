@@ -45,15 +45,7 @@ public class GameManager: MonoBehaviour
         nextState = GameState.InLobby;
         StartCoroutine(UpdateState());
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown("3"))
-        {
-            SceneManager.LoadScene("LobbyScene");
-        }
-
-    }
+    
     private IEnumerator UpdateState()
     {
         while (isGameRunning)
@@ -94,7 +86,7 @@ public class GameManager: MonoBehaviour
         if (currentState == GameState.InLobby)
         {
             return GameState.InBase;
-        }
+        }     
 
         if (currentState == GameState.InBase || currentState == GameState.InStage)
         {
@@ -112,6 +104,7 @@ public class GameManager: MonoBehaviour
                     return GameState.InStage;
             }
         }
+
         return GameState.InLobby;
     }
     public void ToNextScene()
