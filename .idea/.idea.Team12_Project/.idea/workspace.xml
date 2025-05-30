@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f1533554-3bd5-4ab4-83c0-a57a92ed6781" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Team12_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Team12_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Interaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Interaction.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
