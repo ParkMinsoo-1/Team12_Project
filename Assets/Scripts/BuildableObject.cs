@@ -59,6 +59,6 @@ public class BuildableObject : MonoBehaviour, IBuildableObject
 
     public void Work()
     {
-        
+
     }
 }

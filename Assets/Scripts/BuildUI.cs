@@ -28,7 +28,7 @@ public class BuildUI : MonoBehaviour
 
             textUIs = gameObject.transform.GetChild(i).GetComponentsInChildren<TextMeshProUGUI>();
 
-            textUIs[0].text = level.ToString();             //¼öÁ¤ÇÏ°í ½ÍÀºµ¥ ¸¶¶¥È÷ ¶°¿À¸£Áö ¾ÊÀ½
+            textUIs[0].text = level.ToString();             //ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             textUIs[1].text = stringBuilder.ToString();
             textUIs[2].text = buildText;
             stringBuilder.Remove(0, stringBuilder.Length);

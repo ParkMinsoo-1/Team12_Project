@@ -20,7 +20,9 @@ MonoBehaviour:
   maxStack: 1
   price: 150
   equipment: 0
+  itemPrefab: {fileID: 3364052892661595104, guid: 8a7a20a05c7b9ca42b5c47a222abe2bc, type: 3}
   atk: 8
   def: 0
   healAmount: 0
   duration: 0
+  hunger: 0
