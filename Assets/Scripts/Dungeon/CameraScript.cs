@@ -9,6 +9,11 @@ public class CameraScript : MonoBehaviour
 
     void LateUpdate()
     {
+        if (player == null)
+        {
+            player = PlayerManager.Instance.Player.gameObject;
+        }
+
         Vector3 direction = (player.transform.position - transform.position).normalized;
         RaycastHit[] hits = Physics.RaycastAll(transform.position, direction, Mathf.Infinity, 1 << 7);        
 

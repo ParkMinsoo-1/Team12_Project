@@ -18,7 +18,6 @@ public class DungeonManager : MonoBehaviour
         }
         mapDistance = mapList[1].transform.position.z - mapList[0].transform.position.z;
 
-        EnterDungeon(1); // 테스트용
     }
 
     public void EnterDungeon(int mapCode)
