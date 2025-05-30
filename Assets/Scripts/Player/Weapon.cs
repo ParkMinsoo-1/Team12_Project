@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private ItemDataSO defaultWeaponPrefab;  // 기본 무기 프리팹
-    private ItemDataSO weaponInstance;  // 현재 장착된 무기 인스턴스
+    private GameObject weaponInstance;  // 현재 장착된 무기 인스턴스
     
     Transform FindDeepChild(Transform parent, string name)
     {
@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
             Destroy(weaponInstance);
 
         // 새로운 무기 생성 & 장착
-        weaponInstance = Instantiate(weaponPrefab, handTransform);
+        weaponInstance = Instantiate(weaponPrefab.itemPrefab, handTransform);
     }
 }
 

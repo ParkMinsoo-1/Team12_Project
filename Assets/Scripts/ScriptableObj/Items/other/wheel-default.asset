@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5021a69bb0cde44b10adf6fac49733, type: 3}
+  m_Name: wheel-default
+  m_EditorClassIdentifier: 
+  id: 20
+  itemName: wheel-default
+  description: this is wheel-default
+  icon: {fileID: 0}
+  itemtype: 3
+  maxStack: 1
+  price: 10
+  equipment: 0
+  itemPrefab: {fileID: 1130919110570688810, guid: 0e63c77ebd4976446b28f16808e6aff9, type: 3}
+  atk: 0
+  def: 0
+  healAmount: 0
+  duration: 0
+  hunger: 0

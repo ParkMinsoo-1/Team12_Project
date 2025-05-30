@@ -18,9 +18,11 @@ public class ItemDataSO : ScriptableObject
     public string description;
     public Sprite icon;
     public Itemtype itemtype;
+    //public ToolType toolType;
     public int maxStack;
     public float price;
     public bool equipment = false;
+    public GameObject itemPrefab;
 
     [Header("Equip")]
     public float atk;

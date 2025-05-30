@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class IdleState : IState
 {
+    private NormalZombie zombie;
+    public IdleState(NormalZombie zombie)
+    {
+        this.zombie = zombie;
+    }
+
     public void Enter()
     {
 
