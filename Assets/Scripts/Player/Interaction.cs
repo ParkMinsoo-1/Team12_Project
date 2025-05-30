@@ -94,7 +94,7 @@ public class Interaction : MonoBehaviour
         curInteractObject = null;
         itemData = null;
     }
-    public void OnInteractInput(InputAction.CallbackContext context) //아이템 상호작용 함수 받아오고 연결할 예정
+    public void OnInteractInput(InputAction.CallbackContext context) //아이템 줍기 E키
     {
         if(context.phase == InputActionPhase.Started && curInteractObject != null)
         {
@@ -110,7 +110,7 @@ public class Interaction : MonoBehaviour
         }
     }
 
-    public void OnCraftInput(InputAction.CallbackContext context)
+    public void OnCraftInput(InputAction.CallbackContext context) //크래프팅 C키
     {
         if (context.phase == InputActionPhase.Started && curInteractObject != null)
         {
