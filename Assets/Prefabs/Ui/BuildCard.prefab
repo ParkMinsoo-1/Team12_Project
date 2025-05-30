@@ -198,7 +198,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2665351676402933650}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3513987599669721441}
+        m_TargetAssemblyTypeName: BuildCard, Assembly-CSharp
+        m_MethodName: UpgadeBuild
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1939368016170807407
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +305,7 @@ MonoBehaviour:
   - {fileID: 1110713561860581641}
   photo: {fileID: 6148513070302241479}
   buildData: {fileID: 0}
+  infoUi: {fileID: 0}
 --- !u!1 &2431897418295432030
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,8 +832,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 751032181050799570}
   - {fileID: 437338689146904824}
+  - {fileID: 751032181050799570}
   m_Father: {fileID: 1184482283756186969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

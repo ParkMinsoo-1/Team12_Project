@@ -4360,7 +4360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &513871231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4439,7 +4439,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationController: {fileID: 0}
-  isOpenInven: 0
   movSpeed: 10
   rotateSpeed: 10
 --- !u!114 &513871236

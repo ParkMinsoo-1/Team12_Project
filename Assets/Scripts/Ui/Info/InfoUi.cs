@@ -20,12 +20,24 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public GameObject buildCard;
 
     public GameObject buildPanel;
+    public Transform buildTab;
+
     public GameObject objectInfoPanel;
     public GameObject buildInfo;
 
     public bool isBuilding = false;
-    
 
+    [SerializeField] ReadBuildData ReadBuildData;
+    public BuildableObjectsData[][] resourceData;
+    public int index_1 = 0;
+    public int index_2 = 0;
+
+    public Dictionary<string,GameObject> cards = new Dictionary<string,GameObject>();
+
+    private void Awake()
+    {
+        resourceData = ReadBuildData.GetReadData();
+    }
     public void SetInfoUi(string info)
     {
         infoText.text = $"{info}";
@@ -54,17 +66,79 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         isBuilding = false;
         buildPanel.SetActive(false);
         objectInfoPanel.SetActive(true);
-
+        if (buildTab.childCount > 0)
+        {
+            for (int i = buildTab.childCount - 1; i >= 0; i--)
+            {
+                Destroy(buildTab.GetChild(i).gameObject);
+            }
+        }
     }
     public void ShowBuildInfo(bool onOff)
     {
+        if (!onOff)
+        {
+            buildInfo.SetActive(onOff);
+            return;
+        }
+
+        string[] result = new string[4];
+        int[] result_Int = new int[2];
         TMP_Text buildInfoText = buildInfo.GetComponentInChildren<TMP_Text>();
-        buildInfoText.text = "wow";
+        for (int i = 0; i < 2; i++)
+        {
+
+            result[i] = resourceData[index_1][index_2].ResourcesName[i];
+
+            for (int j = 0; j < 2; j++)
+            {
+                result_Int[j] = resourceData[index_1][index_2].ResourcesCount[j];
+                result[2 + j] = $"{result_Int[j]}";
+            }
+        }
+
+        buildInfoText.text = $"{result[0]} / {result[1]}\n" +
+                             $"{result[2]} / {result[3]}";
+
         buildInfo.SetActive(onOff);
     }
     public void UpdateBuildInfoPos(Vector2 mousePos)
     {
         buildInfo.transform.position = mousePos;
     }
+    public void SetBuildCard(BuildCardData data)
+    {
 
+        index_1 = data.JsonDataIndex_1;
+        index_2 = data.JsonDataIndex_2;
+        BuildCard card = buildCard.GetComponent<BuildCard>();
+        card.buildData = data;
+
+        Instantiate(buildCard, buildTab);
+
+        /*        foreach (Transform buildSlot in buildTab)
+                {
+                    if (buildSlot.childCount >= 1)
+                    {
+                        GameObject theCard = GetComponentInChildren<GameObject>();
+                        cards.Add(data.Name, theCard);
+                        break;
+                    }
+                }*/
+
+    }
+    //public void CheckTheCard(BuildCardData data)
+    //{
+    //    BuildableObject buildableObject = FindObjectOfType<BuildableObject>();
+    //    string name = buildData.Name;
+    //    int a = 0;
+    //    switch (name)
+    //    {
+    //        case "Sweet Home":
+    //            a = 3;
+    //            buildableObject.Build(a);
+    //            break;
+    //    }
+    //    Destroy(this.gameObject);
+    //}
 }
