@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class MapPlayer : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MapPlayer : MonoBehaviour
     float hAxis;
     float vAxis;
     Vector3 moveDirection;
+    public InfoUi infoUi;
 
     private void Update()
     {
@@ -27,12 +29,23 @@ public class MapPlayer : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("플레이어 맵인식");
+        if (other.TryGetComponent(out IInterctable target))
+        {
+            infoUi = UiManager.Instance.mainUi.infoLayout.GetComponent<InfoUi>();
+
+            infoUi.ChangeButtonFunc(target.MyCase());
+            UiManager.Instance.mainUi.UpdateInfoUi(target.MyInfo(), true);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("플레이어 맵인식해제");
+        if (UiManager.Instance.cardData != null)
+        {
+            UiManager.Instance.cardData = null;
+        }
+        UiManager.Instance.mainUi.UpdateInfoUi(null, false);
     }
-    
 
+    //UiManager.Instance.mainUi.UpdateInfoUi(null, false);
 }

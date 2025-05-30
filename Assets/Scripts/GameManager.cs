@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor.Build;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -126,7 +128,7 @@ public class GameManager: MonoBehaviour
                 break;
 
             case GameState.InStage:
-                yield return SceneManager.LoadSceneAsync("StageScene"); //스테이지 씬으로 이름 변경 필요
+                yield return SceneManager.LoadSceneAsync("HomeScene"); //스테이지 씬으로 이름 변경 필요
                 break;
 
             case GameState.InMap:
@@ -139,16 +141,37 @@ public class GameManager: MonoBehaviour
     }
     public void NextSceneSetting()
     {
+        PlayerManager.Instance.Player.gameObject.SetActive(true);
+
+        if (cam.TryGetComponent<CameraScript>(out var component))
+        {
+            Destroy(component);
+        }
+
+        cam.orthographicSize = 20f;
+        FollowCamera playerCam = cam.GetComponent<FollowCamera>();
+        playerCam.target = PlayerManager.Instance.Player.gameObject.transform;
+        playerCam.offset = new Vector3(-30, 45, -30);
+        playerCam.transform.rotation = Quaternion.Euler(45, 45, 0);
+
+
         GameObject spawnPoint = GameObject.FindWithTag("SpawnPoint");
         PlayerManager.Instance.Player.transform.position = spawnPoint.transform.position;
+
         if (nextState == GameState.InMap)
         {
             PlayerManager.Instance.Player.gameObject.SetActive(false);
-            FollowCamera playerCam = cam.GetComponent<FollowCamera>();
             playerCam.transform.rotation = Quaternion.Euler(90, 0, 0);
             playerCam.target = GameObject.FindWithTag("Map").transform;
             cam.orthographicSize = 8f;
             playerCam.offset = new Vector3(0, 2f, 0);
+        }
+        
+        if (nextState == GameState.InStage)
+        {
+            CameraScript camScript = cam.AddComponent<CameraScript>();
+            DungeonManager dm = FindObjectOfType<DungeonManager>();
+            dm.EnterDungeon(1);
         }
     }
     //public void EndLobby()

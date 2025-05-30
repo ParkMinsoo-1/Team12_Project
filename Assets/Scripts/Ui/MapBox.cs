@@ -10,16 +10,13 @@ public class MapBox : MonoBehaviour, IInterctable
 
     public string MyInfo()
     {
-        if (infoUi == null)
-        {
-            infoUi = FindObjectOfType<InfoUi>();
-        }
         string info = "Enter The Stage";
 
         return info;
     }
     public string MyCase()
     {
+        infoUi = UiManager.Instance.mainUi.infoLayout.GetComponent<InfoUi>();
         infoUi.SetSceneCard(placeData);
         return myCase;
     }

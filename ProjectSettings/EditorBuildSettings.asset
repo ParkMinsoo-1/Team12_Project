@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ForestAndCamp.unity
     guid: 3803bd063982c9e4981d622bbcde6963
+  - enabled: 1
+    path: Assets/Scenes/HomeScene.unity
+    guid: 85c48360cf925664f86331b1b61165e7
   m_configObjects: {}
