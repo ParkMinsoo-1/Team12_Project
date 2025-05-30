@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Knife
   description: A basic melee weapon
   icon: {fileID: 0}
-  itemtype: 2
+  itemtype: 0
   maxStack: 1
   price: 120
   equipment: 0
