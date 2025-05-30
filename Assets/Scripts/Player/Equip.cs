@@ -58,6 +58,12 @@ public class Equip : MonoBehaviour
 
         // 새로운 무기 생성 & 장착
         weaponInstance = Instantiate(weaponPrefab.itemPrefab, handTransform);
+        
+        Weapon weaponScript = weaponInstance.GetComponent<Weapon>();
+        if (weaponScript != null)
+        {
+            weaponScript.SetWeaponData(weaponPrefab);
+        }
     }
 }
 

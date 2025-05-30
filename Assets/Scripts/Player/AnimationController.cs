@@ -6,8 +6,7 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     private Animator animator;
-    private float attackDelay = 0.5f;
-    
+    private bool isMove;
 
     private void Awake()
     {
@@ -17,13 +16,14 @@ public class AnimationController : MonoBehaviour
     public void Move(Vector3 playerDirection)
     {
         animator.SetBool("IsMove", playerDirection.magnitude > 0.9f);
+        isMove = true;
     }
 
     public void Attack()
     {
         animator.SetTrigger("IsAttack");
         EndAttack();
-        
+
     }
 
     public void EndAttack()
@@ -33,11 +33,21 @@ public class AnimationController : MonoBehaviour
 
     public void Damaged()
     {
-        
+
     }
 
     public void Gather()
     {
         animator.SetTrigger("IsGathering");
     }
+
+    public void GatherAndMove()
+    {
+        if (isMove = true)
+        {
+            animator.SetBool("OnMove", true);
+        }
+    }
 }
+
+
