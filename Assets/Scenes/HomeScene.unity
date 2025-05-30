@@ -1477,10 +1477,10 @@ RectTransform:
   - {fileID: 317715086}
   m_Father: {fileID: 125030913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -75}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206825443
 MonoBehaviour:
@@ -3624,10 +3624,10 @@ RectTransform:
   - {fileID: 598395823}
   m_Father: {fileID: 125030913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -415}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &699366175
 MonoBehaviour:
@@ -6314,7 +6314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1122217501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6327,14 +6327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c658e339f2a83e54ebe83caa3bee1989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statBars:
-  - {fileID: 812543207}
-  - {fileID: 2113421295}
-  - {fileID: 1785017340}
-  statTexts:
-  - {fileID: 367344791}
-  - {fileID: 172310619}
-  - {fileID: 1835079599}
+  mainLayout: {fileID: 0}
+  infoLayout: {fileID: 0}
+  inventoryLayout: {fileID: 0}
 --- !u!114 &1122217502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7180,6 +7175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationController: {fileID: 0}
+  isOpenInven: 0
+  isAttack: 0
   movSpeed: 10
   rotateSpeed: 10
 --- !u!114 &1262989881
@@ -7239,6 +7236,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 20ed966d-3a8a-4748-8f7f-1bccea43eb7f
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1d2400ec-5620-486f-9ae1-343eb357534d
+    m_ActionName: Player/Cract[/Keyboard/c]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -9110,10 +9111,10 @@ RectTransform:
   - {fileID: 974136152}
   m_Father: {fileID: 125030913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -245}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1562371981
 MonoBehaviour:
