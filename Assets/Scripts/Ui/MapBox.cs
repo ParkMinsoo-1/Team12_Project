@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class MapBox : MonoBehaviour, IInterctable
 {
-
-
+    public BuildCardData placeData;
+    public InfoUi infoUi;
+    public string myCase;
 
     public string MyInfo()
     {
+        if (infoUi == null)
+        {
+            infoUi = FindObjectOfType<InfoUi>();
+        }
         string info = "Enter The Stage";
-        //UiManager.Instance.cardData = buildData;
 
         return info;
     }
     public string MyCase()
     {
-        return "";
+        infoUi.SetSceneCard(placeData);
+        return myCase;
     }
 }
