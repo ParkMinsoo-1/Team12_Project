@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Pickaxe
   description: Breaks rocks and mines ores
   icon: {fileID: 0}
-  itemtype: 2
+  itemtype: 0
   maxStack: 1
   price: 180
   equipment: 0

@@ -7,6 +7,8 @@ TagManager:
   - Interactable
   - Craft
   - Item
+  - SpawnPoint
+  - Map
   layers:
   - Default
   - TransparentFX

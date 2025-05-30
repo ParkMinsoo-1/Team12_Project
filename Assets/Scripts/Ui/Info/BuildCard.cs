@@ -64,7 +64,8 @@ public class BuildCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                 buildableObject.Build(a,this.gameObject);
                 infoUi.OnShowBuildPanel();
                 UiManager.Instance.mainUi.UpdateInfoUi(null, false);
-                GameManager.Instance.EndLobby();
+                GameManager.Instance.select = "Base";
+                GameManager.Instance.isStateRunning = false;
                 return;
             case "Work Bench":
 

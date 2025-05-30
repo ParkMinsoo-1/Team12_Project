@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4886168155026810157}
   - component: {fileID: 3510522365935909814}
   m_Layer: 0
-  m_Name: tool-pickaxe
+  m_Name: Weapon-pickaxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

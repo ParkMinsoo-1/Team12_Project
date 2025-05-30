@@ -65,6 +65,9 @@ public class Interaction : MonoBehaviour
         // }
         if (other.TryGetComponent(out IInterctable target))
         {
+            //ChangeButtonFunc
+            InfoUi infoUi = UiManager.Instance.mainUi.infoLayout.GetComponent<InfoUi>();
+            infoUi.ChangeButtonFunc(target.MyCase());
             UiManager.Instance.mainUi.UpdateInfoUi(target.MyInfo(), true);
         }
 
@@ -89,7 +92,12 @@ public class Interaction : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        if (UiManager.Instance.cardData != null)
+        {
+            UiManager.Instance.cardData = null;
+        }
         UiManager.Instance.mainUi.UpdateInfoUi(null, false);
+
         item = null;
         curInteractObject = null;
         itemData = null;
@@ -106,6 +114,7 @@ public class Interaction : MonoBehaviour
                 item = null;
                 curInteractObject = null;
                 itemData = null;
+                
             }
         }
     }

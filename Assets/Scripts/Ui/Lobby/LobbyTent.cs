@@ -14,4 +14,8 @@ public class LobbyTent : MonoBehaviour, IInterctable
 
         return info;
     }
+    public string MyCase()
+    {
+        return "Build";
+    }
 }

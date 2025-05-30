@@ -17,8 +17,9 @@ public class PlayerManager : MonoBehaviour
 
     public Player Player;
 
-
     public Vector3 playerPos;
+
+    public string playerSelect;
 
 
     private void Awake()
