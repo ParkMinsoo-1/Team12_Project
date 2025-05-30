@@ -111,37 +111,38 @@ public class GameManager: MonoBehaviour
     }
     public void ToNextScene()
     {
-        //nextState
-
-        switch (nextState) 
+        StartCoroutine(ToNextSceneC());
+        
+    }
+    public IEnumerator ToNextSceneC()
+    {
+        switch (nextState)
         {
             case GameState.InBase:
-                SceneManager.LoadScene("ForestAndCamp"); //베이스 씬으로 이름 변경 필요
-                PlayerSpawnSetting();
+                yield return SceneManager.LoadSceneAsync("ForestAndCamp"); //베이스 씬으로 이름 변경 필요
                 break;
 
             case GameState.InStage:
-                SceneManager.LoadScene("StageScene"); //스테이지 씬으로 이름 변경 필요
-                PlayerSpawnSetting();
+                yield return SceneManager.LoadSceneAsync("StageScene"); //스테이지 씬으로 이름 변경 필요
                 break;
 
             case GameState.InMap:
-                SceneManager.LoadScene("MapScene");
-                PlayerSpawnSetting();
+                yield return SceneManager.LoadSceneAsync("MapScene"); 
                 break;
 
         }
-        
+        PlayerSpawnSetting();
+        yield break;
     }
     public void PlayerSpawnSetting()
     {
         GameObject spawnPoint = GameObject.FindWithTag("SpawnPoint");
         PlayerManager.Instance.Player.transform.position = spawnPoint.transform.position;
     }
-    public void EndLobby()
-    {
-        SceneManager.LoadScene("ForestAndCamp");
-    }
+    //public void EndLobby()
+    //{
+    //    SceneManager.LoadScene("ForestAndCamp");
+    //}
     public void StateEnd()
     {
         isStateRunning = false;

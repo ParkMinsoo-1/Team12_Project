@@ -97,6 +97,7 @@ public class Interaction : MonoBehaviour
             UiManager.Instance.cardData = null;
         }
         UiManager.Instance.mainUi.UpdateInfoUi(null, false);
+
         item = null;
         curInteractObject = null;
         itemData = null;

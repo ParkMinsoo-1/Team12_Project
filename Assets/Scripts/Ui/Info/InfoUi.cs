@@ -27,6 +27,8 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public GameObject objectInfoPanel;
     public GameObject buildInfo;
 
+    public GameObject SceneChangePanel;
+
     public bool isBuilding = false;
 
     public bool isSceneSelect = false;
@@ -59,11 +61,13 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
     public void ChangeButtonFunc(string choice)
     {
-        int count = realButton.onClick.GetPersistentEventCount();
-        if (count > 0)
-        {
-            return;
-        }
+        //int count = realButton.onClick.GetPersistentEventCount();
+        //if (count > 0)
+        //{
+        //    return;
+        //}
+        realButton.onClick.RemoveAllListeners();
+
         switch (choice)
         {
             case "Build":
@@ -82,10 +86,6 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 GameManager.Instance.select = "Stage";
                 realButton.onClick.AddListener(OnShowScenePanel);
                 break;
-
-            case "Remove":
-                realButton.onClick.RemoveAllListeners();
-                break;
         }
     }
     public void OnShowScenePanel()
@@ -93,12 +93,12 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (!isSceneSelect)
         {
             isSceneSelect = true;
-            //buildPanel.SetActive(true);
+            SceneChangePanel.SetActive(true);
             objectInfoPanel.SetActive(false);
             return;
         }
         isSceneSelect = false;
-        //buildPanel.SetActive(false);
+        SceneChangePanel.SetActive(false);
         objectInfoPanel.SetActive(true);
     }
     public void OnShowBuildPanel()

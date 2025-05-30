@@ -42,10 +42,13 @@ public class MainUi : MonoBehaviour
     public void UpdateInfoUi(string? info, bool onOff)
     {
         InfoUi infoUi = infoLayout.GetComponent<InfoUi>();
-        if (info != null && UiManager.Instance.cardData != null)
+        if (info != null)
         {
             infoUi.SetInfoUi(info);
-            infoUi.SetBuildCard(UiManager.Instance.cardData);
+            if (UiManager.Instance.cardData != null)
+            {
+                infoUi.SetBuildCard(UiManager.Instance.cardData);
+            }
         }
         infoUi.objectInfoPanel.SetActive(onOff);
     }
