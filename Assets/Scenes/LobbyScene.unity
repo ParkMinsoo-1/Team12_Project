@@ -17737,7 +17737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9495424e70aa5414192d87cabf31971a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReadBuildData: {fileID: 607227578}
+  readBuildData: {fileID: 0}
 --- !u!4 &1915625850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 05b46ff2818c470459fe6ac65e628097, type: 3}
