@@ -7518,13 +7518,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6068780302607553042, guid: 5eaa329a0656e0b41a5189adfe41855c, type: 3}
+      propertyPath: equipScript
+      value: 
+      objectReference: {fileID: 1093906667}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1738596882498322093, guid: 5eaa329a0656e0b41a5189adfe41855c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2068262785}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eaa329a0656e0b41a5189adfe41855c, type: 3}
 --- !u!1001 &823781925
 PrefabInstance:
@@ -9220,6 +9221,10 @@ PrefabInstance:
       propertyPath: toolImage
       value: 
       objectReference: {fileID: 106558880}
+    - target: {fileID: 6068780302607553042, guid: 5eaa329a0656e0b41a5189adfe41855c, type: 3}
+      propertyPath: equipScript
+      value: 
+      objectReference: {fileID: 1093906667}
     m_RemovedComponents:
     - {fileID: 3021902089837461860, guid: 5eaa329a0656e0b41a5189adfe41855c, type: 3}
     m_RemovedGameObjects:
@@ -19562,24 +19567,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05b46ff2818c470459fe6ac65e628097, type: 3}
---- !u!1 &2068262784 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1738596882498322093, guid: 5eaa329a0656e0b41a5189adfe41855c, type: 3}
-  m_PrefabInstance: {fileID: 814257435}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2068262785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068262784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eb865fdda4da7349899edcde994b869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  equipScript: {fileID: 1093906667}
 --- !u!1001 &2068442978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20212,6 +20199,10 @@ PrefabInstance:
       propertyPath: toolImage
       value: 
       objectReference: {fileID: 1372012552}
+    - target: {fileID: 6068780302607553042, guid: 5eaa329a0656e0b41a5189adfe41855c, type: 3}
+      propertyPath: equipScript
+      value: 
+      objectReference: {fileID: 1093906667}
     m_RemovedComponents:
     - {fileID: 3021902089837461860, guid: 5eaa329a0656e0b41a5189adfe41855c, type: 3}
     m_RemovedGameObjects:
