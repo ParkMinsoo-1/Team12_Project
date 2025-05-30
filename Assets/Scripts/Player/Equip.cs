@@ -22,14 +22,28 @@ public class Equip : MonoBehaviour
     }
     void Start()
     {
-        // 처음 시작할 때 기본 무기 장착
+        // 처음 시작할 때 기본 무기 장착, 만약 기본 장착 무기에 무기가 아닌 것이 들어가면 파괴.
         if (defaultWeaponPrefab != null)
-            EquipWeapon(defaultWeaponPrefab);
+        {
+            if (defaultWeaponPrefab.itemtype != Itemtype.weapon)
+            {
+                defaultWeaponPrefab = null;
+            }
+            else
+            {
+                EquipWeapon(defaultWeaponPrefab);
+            }
+        }
     }
 
     // 무기 장착 함수 (외부에서 선택 무기 프리팹을 받아옴)
     public void EquipWeapon(ItemDataSO weaponPrefab)
     {
+        if (weaponPrefab.itemtype != Itemtype.weapon)
+        {
+            Debug.Log("장찰 할 수 없습니다.");
+        }
+        
         //손 위치 찾기
         Transform handTransform = FindDeepChild(transform, "jointItemR");
         if (handTransform == null)
