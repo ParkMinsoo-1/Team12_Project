@@ -7,14 +7,15 @@ public interface IBuildableObject
 }
 public class BuildableObject : MonoBehaviour, IBuildableObject
 {
-    [SerializeField] ReadBuildData ReadBuildData;
+    [SerializeField] ReadBuildData readBuildData;
     public BuildableObjectsData[][] resourceData;
     public int[] level { get; private set; } = new int[] { 0, 0, 0 };
 
     
     void Start()
     {
-        resourceData = ReadBuildData.GetReadData(); // resourceData[오브젝트타입][레벨]
+        //resourceData = readBuildData.GetReadData(); 
+        resourceData = ReadBuildData.BuildablObjectData; // resourceData[오브젝트타입][레벨]
     }
 
     public void Build(int type, GameObject a)
