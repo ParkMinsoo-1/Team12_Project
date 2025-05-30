@@ -53,15 +53,15 @@ public class SpawnFurniture : MonoBehaviour
         switch (rotation)
         {
             case 1:
-                return 270;
+                return 270+45;
             case 2:
-                return 0;
+                return 0 + 45;
             case 3:
-                return 90;
+                return 90 + 45;
             case 4:
-                return 180;
+                return 180 + 45;
             default:
-                return 0;
+                return 0 + 45;
         }
     }
 

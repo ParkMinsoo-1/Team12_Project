@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Dungeon Forest
   m_EditorClassIdentifier: 
   dungeonCode: 0
-  dungeonName: Forest
+  Name: Forest
+  description: "\uACE0\uC694\uD55C \uC232"
