@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Axe
   description: Chops down trees and breaks wooden objects
   icon: {fileID: 0}
-  itemtype: 2
+  itemtype: 0
   maxStack: 1
   price: 150
   equipment: 0
