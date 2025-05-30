@@ -13,4 +13,8 @@ public class BuildObj : MonoBehaviour, IInterctable
 
         return info;
     }
+    public string MyCase()
+    {
+        return "Build";
+    }
 }

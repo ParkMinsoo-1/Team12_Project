@@ -10,12 +10,14 @@ using Unity.VisualScripting;
 interface IInterctable
 {
     string MyInfo();
+    string MyCase();
 }
 
 public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public TMP_Text infoText;
     public Image button;
+    public Button realButton;
     public Action changeInfoUi;
     public GameObject buildCard;
 
@@ -26,6 +28,8 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public GameObject buildInfo;
 
     public bool isBuilding = false;
+
+    public bool isSceneSelect = false;
 
     [SerializeField] ReadBuildData ReadBuildData;
     public BuildableObjectsData[][] resourceData;
@@ -53,7 +57,50 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         button.color = Color.red;
     }
+    public void ChangeButtonFunc(string choice)
+    {
+        int count = realButton.onClick.GetPersistentEventCount();
+        if (count > 0)
+        {
+            return;
+        }
+        switch (choice)
+        {
+            case "Build":
+                realButton.onClick.AddListener(OnShowBuildPanel);
+                break;
 
+            case "SceneMap":
+                GameManager.Instance.select = "Map";
+                realButton.onClick.AddListener(OnShowScenePanel);
+                break ;
+            case "SceneBase":
+                GameManager.Instance.select = "Base";
+                realButton.onClick.AddListener(OnShowScenePanel);
+                break;
+            case "SceneStage":
+                GameManager.Instance.select = "Stage";
+                realButton.onClick.AddListener(OnShowScenePanel);
+                break;
+
+            case "Remove":
+                realButton.onClick.RemoveAllListeners();
+                break;
+        }
+    }
+    public void OnShowScenePanel()
+    {
+        if (!isSceneSelect)
+        {
+            isSceneSelect = true;
+            //buildPanel.SetActive(true);
+            objectInfoPanel.SetActive(false);
+            return;
+        }
+        isSceneSelect = false;
+        //buildPanel.SetActive(false);
+        objectInfoPanel.SetActive(true);
+    }
     public void OnShowBuildPanel()
     {
         if (!isBuilding)

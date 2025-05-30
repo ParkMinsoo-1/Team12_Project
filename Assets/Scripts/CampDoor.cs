@@ -6,4 +6,9 @@ public class CampDoor : MonoBehaviour, IInterctable
     {
         return "Open Door";
     }
+    public string MyCase()
+    {
+        return "SceneMap";
+    }
+
 }
