@@ -139,10 +139,6 @@ public class Interaction : MonoBehaviour
                     {
                         Debug.Log("제작이 완료되었습니다.");
                     }
-                    else
-                    {
-                        Debug.Log("제작이 실패하였습니다.");
-                    }
                 }
                 else
                 {
