@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Dungeon House
   m_EditorClassIdentifier: 
   dungeonCode: 1
-  dungeonName: House
+  Name: House
+  description: "\uC774\uC81C\uB294 \uC544\uBB34\uB3C4 \uC0B4\uC9C0 \uC54A\uB294 \uC9D1"

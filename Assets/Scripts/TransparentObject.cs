@@ -11,28 +11,14 @@ public class TransparentObject : MonoBehaviour
     }
 
     MeshRenderer meshRenderer;
-    int iNum = -1;
 
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    private void Update()
-    {
-        if (iNum == -1) return;
-
-        iNum = 1;
-
-        if(iNum == 1)
-        {
-            NoTransparent();
-        }
-    }
-
     public void BecomeTransparent()
-    {
-        iNum = 0;
+    {        
         for(int i = 0; i < meshRenderer.materials.Length; i++)
         {            
             changeRenderMode(meshRenderer.materials[i], BlendMode.Transparent);
@@ -41,11 +27,11 @@ public class TransparentObject : MonoBehaviour
     }
 
     public void NoTransparent()
-    {
+    {        
         for (int i = 0; i < meshRenderer.materials.Length; i++)
         {
-            meshRenderer.materials[i].color = new Color(meshRenderer.materials[i].color.r, meshRenderer.materials[i].color.g, meshRenderer.materials[i].color.b, 1);
-            iNum = -1;
+            changeRenderMode(meshRenderer.materials[i], BlendMode.Opaque);
+            meshRenderer.materials[i].color = new Color(meshRenderer.materials[i].color.r, meshRenderer.materials[i].color.g, meshRenderer.materials[i].color.b, 1);            
         }
     }
 

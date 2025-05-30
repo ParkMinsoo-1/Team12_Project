@@ -69,6 +69,8 @@ public class InventoryManager : MonoBehaviour
         foreach (var usedItem in usedItems)
         {
             playerInven.Remove(usedItem);
+            UiManager.Instance.mainUi.RemoveUIItem(usedItem);
+            //인벤토리 UI
         }
     }
 

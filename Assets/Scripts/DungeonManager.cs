@@ -1,9 +1,9 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class DungeonManager : MonoBehaviour
 {
-    //¸ÊÄÚµå¸¦ ¹Ş¾Æ¼­ ¸Ê on/off, ÇØ´ç À§Ä¡·Î ÇÃ·¹ÀÌ¾î ÀÌµ¿
+    //ë§µì½”ë“œë¥¼ ë°›ì•„ì„œ ë§µ on/off, í•´ë‹¹ ìœ„ì¹˜ë¡œ í”Œë ˆì´ì–´ ì´ë™
     [SerializeField] GameObject player;
     float mapDistance;
     Vector3 mapStartPosition;
@@ -17,6 +17,8 @@ public class DungeonManager : MonoBehaviour
             mapList.Add(gameObject.transform.GetChild(i).gameObject);
         }
         mapDistance = mapList[1].transform.position.z - mapList[0].transform.position.z;
+
+        EnterDungeon(1); // í…ŒìŠ¤íŠ¸ìš©
     }
 
     public void EnterDungeon(int mapCode)
