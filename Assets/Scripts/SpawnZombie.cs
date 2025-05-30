@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class SpawnZombie : MonoBehaviour
 {
-    [SerializeField] List<GameObject> zombieList = new List<GameObject>();
     List<GameObject> zombieSpawners = new List<GameObject>();
     Quaternion zombieRotation = Quaternion.identity;
     void Start()
@@ -22,15 +21,8 @@ public class SpawnZombie : MonoBehaviour
 
         for (int i = 0; i < zombieSpawners.Count; i++)
         {
-            zombie = GetRandomZombie();
+            zombie = ZombieContainer.Instance.GetZombie();
             Instantiate(zombie, zombieSpawners[i].transform.position, zombieRotation);
         }
-        
-    }
-
-    GameObject GetRandomZombie()
-    {
-        int iNum = Random.Range(0, zombieList.Count);
-        return zombieList[iNum];
     }
 }

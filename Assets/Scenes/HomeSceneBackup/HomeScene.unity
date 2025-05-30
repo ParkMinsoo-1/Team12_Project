@@ -8287,8 +8287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3d853eb99b0ca4595fffa00686217b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieList:
-  - {fileID: 6514577667072978499, guid: 82ce7a26593275e4ab62b4b5ebe2ac84, type: 3}
 --- !u!1001 &394925356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13500,6 +13498,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 05b46ff2818c470459fe6ac65e628097, type: 3}
   m_PrefabInstance: {fileID: 924179307}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &643555255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 643555256}
+  - component: {fileID: 643555257}
+  m_Layer: 0
+  m_Name: ZombieContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &643555256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643555255}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1916587817}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &643555257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643555255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6cfd25c74491441b31d70f5b7e6094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieList:
+  - {fileID: 6514577667072978499, guid: 82ce7a26593275e4ab62b4b5ebe2ac84, type: 3}
 --- !u!4 &643836171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 751e4edb210b80047b4dfe88619dc5f2, type: 3}
@@ -27628,8 +27672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3d853eb99b0ca4595fffa00686217b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieList:
-  - {fileID: 6514577667072978499, guid: 82ce7a26593275e4ab62b4b5ebe2ac84, type: 3}
 --- !u!1001 &1311471286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40290,6 +40332,7 @@ Transform:
   m_Children:
   - {fileID: 333138827}
   - {fileID: 189918310}
+  - {fileID: 643555256}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1916587818
