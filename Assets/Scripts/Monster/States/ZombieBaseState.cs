@@ -9,7 +9,14 @@ interface IState
     void Exit();
 }
 
-public abstract class ZombieBaseState
+public abstract class ZombieBaseState : MonoBehaviour
 {
+    //protected IdleState idle = new IdleState();
+    //protected ChaseState move = new ChaseState();
+    //protected AttackState attack = new AttackState();
+
+    //public Animator anim;
+    //public Rigidbody rigid;
+
 
 }
