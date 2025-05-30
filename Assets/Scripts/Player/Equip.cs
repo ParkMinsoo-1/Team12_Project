@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Equip : MonoBehaviour
 {
     [SerializeField] private ItemDataSO defaultWeaponPrefab;  // 기본 무기 프리팹
     private GameObject weaponInstance;  // 현재 장착된 무기 인스턴스
