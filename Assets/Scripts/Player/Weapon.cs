@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private Transform weaponPrefab;  // 붙일 무기 프리팹
-    private Transform weaponInstance;  // 생성된 무기 인스턴스
+    [SerializeField] private ItemDataSO defaultWeaponPrefab;  // 기본 무기 프리팹
+    private ItemDataSO weaponInstance;  // 현재 장착된 무기 인스턴스
     
     Transform FindDeepChild(Transform parent, string name)
     {
@@ -22,11 +22,28 @@ public class Weapon : MonoBehaviour
     }
     void Start()
     {
-        Transform handTransform = FindDeepChild(transform, "jointItemR");
-        if (handTransform != null)
-        {
-            Instantiate(weaponPrefab, handTransform);
-        }
+        // 처음 시작할 때 기본 무기 장착
+        if (defaultWeaponPrefab != null)
+            EquipWeapon(defaultWeaponPrefab);
     }
 
+    // 무기 장착 함수 (외부에서 선택 무기 프리팹을 받아옴)
+    public void EquipWeapon(ItemDataSO weaponPrefab)
+    {
+        //손 위치 찾기
+        Transform handTransform = FindDeepChild(transform, "jointItemR");
+        if (handTransform == null)
+        {
+            Debug.LogWarning("손을 찾을 수 없습니다.");
+            return;
+        }
+
+        // 이미 장착 중인 무기가 있다면 제거
+        if (weaponInstance != null)
+            Destroy(weaponInstance);
+
+        // 새로운 무기 생성 & 장착
+        weaponInstance = Instantiate(weaponPrefab, handTransform);
+    }
 }
+

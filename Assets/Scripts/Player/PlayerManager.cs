@@ -10,10 +10,6 @@ public class PlayerManager : MonoBehaviour
     {
         get
         {
-            if (_instance == null)
-            {
-                _instance = new GameObject("PlayerManager").AddComponent<PlayerManager>();
-            }
             return _instance;
         }
     }
