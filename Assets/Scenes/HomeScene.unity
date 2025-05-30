@@ -4221,7 +4221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &189918310
 Transform:
   m_ObjectHideFlags: 0
@@ -5786,8 +5786,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0589d43aa6584141b06bd9090426ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: 
   currentState: 0
   nextState: 0
+  isStateRunning: 0
+  cam: {fileID: 0}
 --- !u!4 &261721904
 Transform:
   m_ObjectHideFlags: 0
@@ -6999,7 +7002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &333138827
 Transform:
   m_ObjectHideFlags: 0
@@ -14930,7 +14933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999a3ec1bf553b0479ff455071dbb35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1673155258}
   offset: {x: -30, y: 45, z: -30}
 --- !u!114 &714197759
 MonoBehaviour:
@@ -14944,7 +14947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f03a4e5e959e7a4aa0bc68953636c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1673155257}
 --- !u!1001 &721050609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15060,6 +15063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1673155264}
   playerPos: {x: 0, y: 0, z: 0}
+  playerSelect: 
 --- !u!1 &728907859
 GameObject:
   m_ObjectHideFlags: 0
@@ -17861,12 +17865,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoText: {fileID: 290971762}
   button: {fileID: 728907860}
+  realButton: {fileID: 0}
   buildCard: {fileID: 1939368016170807407, guid: 3297867db4dfed847af634ac629a8494, type: 3}
   buildPanel: {fileID: 1462029333}
   buildTab: {fileID: 1852668244}
   objectInfoPanel: {fileID: 1622408902}
   buildInfo: {fileID: 1963331053}
+  SceneChangePanel: {fileID: 0}
   isBuilding: 0
+  isSceneSelect: 0
   ReadBuildData: {fileID: 622851822}
   index_1: 0
   index_2: 0
@@ -39741,10 +39748,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1916587816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0170e54ad193743aaddb2d2246ff7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ebd287d84736b0489451ce771df313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1673155257}
 --- !u!1001 &1919457202
 PrefabInstance:
   m_ObjectHideFlags: 0
