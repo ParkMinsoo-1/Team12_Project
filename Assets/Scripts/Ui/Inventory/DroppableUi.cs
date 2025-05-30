@@ -16,15 +16,17 @@ public class DroppableUi : MonoBehaviour, IPointerEnterHandler, IDropHandler, IP
     }
 
     public void OnPointerEnter(PointerEventData eventData)
-    //¸¶¿ì½ºÆ÷ÀÎÅÍ°¡ ÄÝ¶óÀÌ´õÃ³·³ ÀÚ½ÅÀÇ ¹üÀ§¾È¿¡ µé¾î¿ÔÀ» ¶§
-    //ÀÌ ¹üÀ§´Â ¿ÀºêÁ§Æ® ÀÚÃ¼ ¹üÀ§ÀÎµíÇÔ
+    //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½Ã³ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+    //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½
     {
-        image.color = Color.yellow;
+        if(image != null)
+            image.color = Color.yellow;
     }
     public void OnPointerExit(PointerEventData eventData)
-    //¸¶¿ì½ºÆ÷ÀÎÅÍ°¡ ÄÝ¶óÀÌ´õÃ³·³ ÀÚ½ÅÀÇ ¹üÀ§¾È¿¡¼­ ³ª°¬À» ¶§
+    //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½Ã³ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     {
-        image.color = Color.white;
+        if(image != null)
+            image.color = Color.white;
     }
     public virtual void OnDrop(PointerEventData eventData)
     {

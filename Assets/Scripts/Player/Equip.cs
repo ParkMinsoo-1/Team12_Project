@@ -65,5 +65,14 @@ public class Equip : MonoBehaviour
             weaponScript.SetWeaponData(weaponPrefab);
         }
     }
+    
+    public void UnEquipWeapon()
+    {
+        if (weaponInstance != null)
+        {
+            Destroy(weaponInstance);
+            weaponInstance = null;
+        }
+    }
 }
 

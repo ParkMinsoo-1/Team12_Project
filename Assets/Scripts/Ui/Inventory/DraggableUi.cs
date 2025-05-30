@@ -15,8 +15,8 @@ public class DraggableUi : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private RectTransform rect;
 
     private CanvasGroup itemGroup;
-    //ui¾ÆÀÌÅÛ ÇÁ¸®ÆÕÀÌ ÀÚ½ÄÀ» °¡Áú ¼öµµ ÀÖ±â¿¡
-    //ÀÚ½Ä±îÁö 
+    //uiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±â¿¡
+    //ï¿½Ú½Ä±ï¿½ï¿½ï¿½ 
     [SerializeField] private UnityEngine.UI.Image itemIcon;
     public ItemDataSO itemData;
 
@@ -44,20 +44,20 @@ public class DraggableUi : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             //inven
         }
         previousParent = transform.parent;
-        //µå·¡±× Á÷Àü¿¡ ¼Ò¼ÓµÇ¾îÀÖ´ø ºÎ¸ğÀÇ Æ®·»½ºÆû Á¤º¸ ÀúÀå
+        //ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¼ÓµÇ¾ï¿½ï¿½Ö´ï¿½ ï¿½Î¸ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         transform.SetParent(inventoryUi);
-        //ºÎ¸ğ ¿ÀºêÁ§Æ®¸¦ ÀÎº¥Åä¸®Äµ¹ö½º·Î ¼³Á¤
+        //ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Îºï¿½ï¿½ä¸®Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         transform.SetAsLastSibling();
-        //°¡Àå ¾Õ¿¡ º¸ÀÌµµ·Ï ¼ø¼­¸¦ ¸¶Áö¸· ÀÚ½ÄÀ¸·Î ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Õ¿ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         itemGroup.blocksRaycasts = false;
-        //¸¶¿ì½º¿Í ½½·ÔÀÌ Ãæµ¹ÇÒ ¼ö ÀÖµµ·Ï
-        //¾ÆÀÌÅÛ±×·ìÀÇ Ãæµ¹Àº ²¨ÁØ´Ù.
+        //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Û±×·ï¿½ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½Ø´ï¿½.
     }
     public void OnDrag(PointerEventData evenData)
     {
         rect.position = evenData.position; 
-        //µå·¡±× ÁßÀÎ ¿ÀºêÁ§ÀÇ À§Ä¡¸¦ ½ºÅ©¸°»óÀÇ ¸¶¿ì½º À§Ä¡·Î ¼³Á¤
+        //ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
     public void OnEndDrag(PointerEventData evenData)
     {
@@ -69,5 +69,15 @@ public class DraggableUi : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
         itemGroup.blocksRaycasts = true;
     }
+    public void ResetToOrigin()
+    {
+        // ì›ë˜ ë¶€ëª¨ë¡œ ë˜ëŒë¦¬ê¸°
+        transform.SetParent(previousParent);
 
+        // ì›ë˜ ë¶€ëª¨ ìœ„ì¹˜ë¡œ ë˜ëŒë¦¬ê¸°
+        rect.position = previousParent.GetComponent<RectTransform>().position;
+
+        // ë“œë˜ê·¸ ì™„ë£Œ í›„ ë‹¤ì‹œ Raycast ì²˜ë¦¬ ê°€ëŠ¥í•˜ê²Œ
+        itemGroup.blocksRaycasts = true;
+    }
 }
