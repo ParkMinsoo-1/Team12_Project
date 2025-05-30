@@ -13,13 +13,13 @@ public class PlayerManager : MonoBehaviour
             return _instance;
         }
     }
-    private Player _player;
+    //private Player _player;
 
-    public Player Player
-    {
-        get { return _player; }
-        set { _player = value; }
-    }
+    public Player Player;
+
+
+    public Vector3 playerPos;
+
 
     private void Awake()
     {
@@ -35,6 +35,16 @@ public class PlayerManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    private void FixedUpdate()
+    {
+        playerPos = Player.transform.position;
+    }
+
+    public float CheckDistanceOfPlayer(Vector3 zombiePos)
+    {
+        float distance = Vector3.Distance(playerPos, zombiePos);
+        return distance;
     }
 }
 
