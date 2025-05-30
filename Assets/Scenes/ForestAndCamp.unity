@@ -4150,7 +4150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReadBuildData: {fileID: 1672918354}
-  buildUI: {fileID: 131033866}
 --- !u!1001 &465534014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4440,6 +4439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationController: {fileID: 0}
   isOpenInven: 0
+  isAttack: 0
   movSpeed: 10
   rotateSpeed: 10
 --- !u!114 &513871236
@@ -4623,7 +4623,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReadBuildData: {fileID: 0}
-  buildUI: {fileID: 0}
 --- !u!1001 &524048134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9231,7 +9230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1019626646
 Transform:
   m_ObjectHideFlags: 0
