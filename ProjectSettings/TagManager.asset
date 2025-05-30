@@ -9,6 +9,7 @@ TagManager:
   - Item
   - SpawnPoint
   - Map
+  - ZombieSpawnPoint
   layers:
   - Default
   - TransparentFX
