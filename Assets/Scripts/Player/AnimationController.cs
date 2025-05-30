@@ -38,6 +38,6 @@ public class AnimationController : MonoBehaviour
 
     public void Gather()
     {
-        animator.SetTrigger("IsGather");
+        animator.SetTrigger("IsGathering");
     }
 }

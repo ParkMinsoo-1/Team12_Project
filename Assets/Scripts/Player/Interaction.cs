@@ -106,6 +106,7 @@ public class Interaction : MonoBehaviour
                 item = null;
                 curInteractObject = null;
                 itemData = null;
+                
             }
         }
     }
