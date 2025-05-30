@@ -17,10 +17,10 @@ MonoBehaviour:
   description: this is Bread
   icon: {fileID: 0}
   itemtype: 4
-  toolType: 0
   maxStack: 100
   price: 5
   equipment: 0
+  itemPrefab: {fileID: 4912618034519548524, guid: 067790e2c506fd44d832e261b2f91de0, type: 3}
   atk: 0
   def: 0
   healAmount: 5

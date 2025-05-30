@@ -17,10 +17,10 @@ MonoBehaviour:
   description: this is utensil-spoon
   icon: {fileID: 0}
   itemtype: 3
-  toolType: 0
   maxStack: 1
   price: 8
   equipment: 0
+  itemPrefab: {fileID: 8394629953811627750, guid: 5b89f94090c632d4d8ed2cf207e1a1b6, type: 3}
   atk: 0
   def: 0
   healAmount: 0

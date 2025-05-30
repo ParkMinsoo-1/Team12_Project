@@ -17,10 +17,10 @@ MonoBehaviour:
   description: this is utensil-knife
   icon: {fileID: 0}
   itemtype: 2
-  toolType: 0
   maxStack: 1
   price: 2
   equipment: 0
+  itemPrefab: {fileID: 3759842748799984051, guid: 5ad4682b3b4ac6341af308f5988927b6, type: 3}
   atk: 2
   def: 0
   healAmount: 0

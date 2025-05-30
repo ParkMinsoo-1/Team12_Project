@@ -17,10 +17,10 @@ MonoBehaviour:
   description: this is Fish
   icon: {fileID: 0}
   itemtype: 4
-  toolType: 0
   maxStack: 100
   price: 10
   equipment: 0
+  itemPrefab: {fileID: 6326561162198288516, guid: c4f2b6b182aee8246a19b998d05e9287, type: 3}
   atk: 0
   def: 0
   healAmount: 0

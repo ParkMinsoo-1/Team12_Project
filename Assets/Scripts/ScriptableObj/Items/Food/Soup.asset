@@ -17,10 +17,10 @@ MonoBehaviour:
   description: this is Soup
   icon: {fileID: 0}
   itemtype: 4
-  toolType: 0
   maxStack: 100
   price: 10
   equipment: 0
+  itemPrefab: {fileID: 5901003146968144037, guid: 94d7e90eac00a614f8dc73ecd1750465, type: 3}
   atk: 0
   def: 0
   healAmount: 10

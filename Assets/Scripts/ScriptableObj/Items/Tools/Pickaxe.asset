@@ -17,10 +17,10 @@ MonoBehaviour:
   description: Breaks rocks and mines ores
   icon: {fileID: 0}
   itemtype: 2
-  toolType: 2
   maxStack: 1
   price: 180
   equipment: 0
+  itemPrefab: {fileID: 7720985168517176657, guid: 0ce332ace35821349aabdbf09ef5d242, type: 3}
   atk: 10
   def: 0
   healAmount: 0

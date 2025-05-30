@@ -17,10 +17,10 @@ MonoBehaviour:
   description: this is Apple
   icon: {fileID: 0}
   itemtype: 4
-  toolType: 0
   maxStack: 100
   price: 2
   equipment: 0
+  itemPrefab: {fileID: 4018951747532985740, guid: 5dce2a5c1d1dc7f47834eabd9fe4ce99, type: 3}
   atk: 0
   def: 0
   healAmount: 3

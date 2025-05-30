@@ -17,10 +17,10 @@ MonoBehaviour:
   description: this is Food
   icon: {fileID: 0}
   itemtype: 4
-  toolType: 0
   maxStack: 100
   price: 15
   equipment: 0
+  itemPrefab: {fileID: 860614671586343645, guid: d94c8e256deb93a49b06a81d0e194f37, type: 3}
   atk: 0
   def: 0
   healAmount: 5

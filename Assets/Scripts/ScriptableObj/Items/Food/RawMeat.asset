@@ -17,10 +17,10 @@ MonoBehaviour:
   description: this is RawMeat
   icon: {fileID: 0}
   itemtype: 4
-  toolType: 0
   maxStack: 40
   price: 15
   equipment: 0
+  itemPrefab: {fileID: 879019119390395688, guid: 8f47c8d25e2299c4da4466e9d949dd45, type: 3}
   atk: 0
   def: 0
   healAmount: 20

@@ -22,6 +22,7 @@ public class ItemDataSO : ScriptableObject
     public int maxStack;
     public float price;
     public bool equipment = false;
+    public GameObject itemPrefab;
 
     [Header("Equip")]
     public float atk;

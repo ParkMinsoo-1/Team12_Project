@@ -17,10 +17,10 @@ MonoBehaviour:
   description: this is Scrap-bolt
   icon: {fileID: 0}
   itemtype: 3
-  toolType: 0
   maxStack: 1
   price: 2
   equipment: 0
+  itemPrefab: {fileID: 5140273379637894940, guid: a95814bcb5f37e44e8a05af037b31416, type: 3}
   atk: 0
   def: 0
   healAmount: 0

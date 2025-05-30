@@ -17,10 +17,10 @@ MonoBehaviour:
   description: this is wheel-default
   icon: {fileID: 0}
   itemtype: 3
-  toolType: 0
   maxStack: 1
   price: 10
   equipment: 0
+  itemPrefab: {fileID: 1130919110570688810, guid: 0e63c77ebd4976446b28f16808e6aff9, type: 3}
   atk: 0
   def: 0
   healAmount: 0
