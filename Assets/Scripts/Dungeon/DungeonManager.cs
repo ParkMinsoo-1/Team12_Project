@@ -8,23 +8,29 @@ public class DungeonManager : MonoBehaviour
     float mapDistance;
     Vector3 mapStartPosition;
 
-    List<GameObject> mapList = new List<GameObject>();
+    [SerializeField] List<GameObject> mapList = new List<GameObject>();
 
     private void Start()
     {
-        for(int i = 0; i < gameObject.transform.childCount; i++)
-        {
-            mapList.Add(gameObject.transform.GetChild(i).gameObject);
-        }
-        mapDistance = mapList[1].transform.position.z - mapList[0].transform.position.z;
+        
 
     }
 
     public void EnterDungeon(int mapCode)
     {
+        SetMap();
         mapList[mapCode].gameObject.SetActive(true);
-        mapStartPosition.z = mapDistance * mapCode;
+        //mapStartPosition.z = mapDistance * mapCode;
 
-        player.transform.position = mapStartPosition;
+        //player.transform.position = mapStartPosition;
+    }
+
+    public void SetMap()
+    {
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            mapList.Add(gameObject.transform.GetChild(i).gameObject);
+        }
+        mapDistance = mapList[1].transform.position.z - mapList[0].transform.position.z;
     }
 }

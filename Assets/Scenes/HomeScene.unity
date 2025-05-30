@@ -12845,12 +12845,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643555255}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1916587817}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &643555257
 MonoBehaviour:
@@ -17229,11 +17229,11 @@ Transform:
   m_GameObject: {fileID: 852628420}
   serializedVersion: 2
   m_LocalRotation: {x: -0.65328145, y: 0.2705982, z: -0.2705982, w: -0.65328145}
-  m_LocalPosition: {x: 6.8997097, y: 0, z: -207.83777}
-  m_LocalScale: {x: 3.2, y: 3.2, z: 0.8000001}
+  m_LocalPosition: {x: 0.56, y: 0, z: -215.51}
+  m_LocalScale: {x: 3.2000003, y: 3.2000003, z: 0.8000003}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1916587817}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &852628422
 SpriteRenderer:
@@ -38194,8 +38194,6 @@ Transform:
   m_Children:
   - {fileID: 333138827}
   - {fileID: 189918310}
-  - {fileID: 643555256}
-  - {fileID: 852628421}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1916587818
@@ -38211,6 +38209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1673155257}
+  mapList: []
 --- !u!1001 &1919457202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43278,5 +43277,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 461237111}
+  - {fileID: 643555256}
+  - {fileID: 852628421}
   - {fileID: 1916587817}
   - {fileID: 261721904}
