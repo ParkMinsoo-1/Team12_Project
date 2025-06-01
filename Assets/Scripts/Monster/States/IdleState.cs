@@ -28,7 +28,7 @@ public class IdleState : IState
         {
             waitTimer += Time.deltaTime;
 
-            if (waitTimer >= 3f)
+            if (waitTimer >= 2f)
             {
                 wait = true;
                 DecidePatrolDirection(); //정찰방향결정

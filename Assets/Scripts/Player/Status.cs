@@ -50,8 +50,7 @@ public class Status : MonoBehaviour
                 break;
 
             case "Subtract":
-                //currentValue = Mathf.Max(currentValue - value, 0);
-                currentValue = Mathf.Clamp(currentValue - value, 0, maxValue);
+                currentValue = Mathf.Max(currentValue - value, 0);
                 break;
         }
         float result = (float)currentValue / (float)maxValue;

@@ -22,11 +22,9 @@ public class ZombieWeapon : MonoBehaviour
     {
         if (isAttack) return;
 
-        isAttack = true;
-
         if (other.TryGetComponent(out IDamageable target) && other.CompareTag("Player"))
         {
-            Debug.Log($"플레이어 피해 입힘 데미지 : {zombie.zombieData.Atk}");
+            isAttack = true;
             target.TakePhysicalDamage(zombie.zombieData.Atk);
         }
     }
