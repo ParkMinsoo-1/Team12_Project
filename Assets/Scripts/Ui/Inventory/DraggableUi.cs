@@ -11,12 +11,14 @@ public class DraggableUi : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private Transform inventoryUi;
 
     private Transform previousParent;
+    private Transform nextParent;
 
     private RectTransform rect;
 
     private CanvasGroup itemGroup;
     //ui������ �������� �ڽ��� ���� ���� �ֱ⿡
     //�ڽı��� 
+
     [SerializeField] private UnityEngine.UI.Image itemIcon;
     public ItemDataSO itemData;
 
@@ -56,11 +58,31 @@ public class DraggableUi : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
     public void OnDrag(PointerEventData evenData)
     {
-        rect.position = evenData.position; 
+        rect.position = evenData.position;
         //�巡�� ���� �������� ��ġ�� ��ũ������ ���콺 ��ġ�� ����
     }
     public void OnEndDrag(PointerEventData evenData)
     {
+        itemGroup.blocksRaycasts = true;
+
+        DroppableEquipUi equipSlot = transform.parent.GetComponent<DroppableEquipUi>();
+        DroppableUi slot = transform.parent.GetComponent<DroppableUi>();
+        if (slot == null)
+        {
+            ResetToOrigin();
+            return;
+        }
+        if (equipSlot != null)
+        {
+            return;
+        }
+
+        if (slot.transform.childCount > 1)
+        {
+            ResetToOrigin();
+            return;
+        }
+
         if (transform.parent == inventoryUi)
         {
             transform.SetParent(previousParent);

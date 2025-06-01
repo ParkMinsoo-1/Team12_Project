@@ -36,7 +36,7 @@ public class DroppableEquipUi : DroppableUi
                 // 아이템 타입 확인
                 if (droppedItemData.itemtype == Itemtype.weapon)
                 {
-                    toolImage.enabled = false;
+                    toolImage.enabled = false;  
 
                     // 슬롯에 아이템 올리기
                     eventData.pointerDrag.transform.SetParent(transform);
