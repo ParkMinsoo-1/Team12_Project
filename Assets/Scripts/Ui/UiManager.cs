@@ -10,6 +10,7 @@ public class UiManager : MonoBehaviour
     public Player player;
     public PlayerStatus ps;
     public BuildCardData cardData;
+    public Recipe recipeData;
 
     private void Awake()
     {

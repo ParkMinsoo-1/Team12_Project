@@ -20,6 +20,7 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Button realButton;
     public Action changeInfoUi;
     public GameObject buildCard;
+    public GameObject craftdCard;
 
     public GameObject buildPanel;
     public Transform buildTab;
@@ -33,7 +34,7 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Image sceneIcon;
 
     public bool isBuilding = false;
-
+    public bool isCrafting = false;
     public bool isSceneSelect = false;
 
     [SerializeField] ReadBuildData ReadBuildData;
@@ -41,7 +42,7 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public int index_1 = 0;
     public int index_2 = 0;
     public int nowMapCode = 0;
-    public Dictionary<string,GameObject> cards = new Dictionary<string,GameObject>();
+    public Dictionary<string, GameObject> cards = new Dictionary<string, GameObject>();
 
     private void Awake()
     {
@@ -76,11 +77,13 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             case "Build":
                 realButton.onClick.AddListener(OnShowBuildPanel);
                 break;
-
+            case "Craft":
+                realButton.onClick.AddListener(OnShowCraftPanel);
+                break;
             case "SceneMap":
                 GameManager.Instance.select = "Map";
                 realButton.onClick.AddListener(OnShowScenePanel);
-                break ;
+                break;
             case "SceneBase":
                 GameManager.Instance.select = "Base";
                 realButton.onClick.AddListener(OnShowScenePanel);
@@ -125,6 +128,30 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             }
         }
     }
+    public void OnShowCraftPanel()
+    {
+        if (!isCrafting)
+        {
+            isCrafting = true;
+            buildPanel.SetActive(true);
+            objectInfoPanel.SetActive(false);
+            return;
+        }
+        Debug.Log(3);
+        isCrafting = false;
+        buildPanel.SetActive(false);
+        objectInfoPanel.SetActive(true);
+        if (buildTab.childCount > 0)
+        {
+            Debug.Log(4);
+            for (int i = buildTab.childCount - 1; i >= 0; i--)
+            {
+                Debug.Log(5);
+                Destroy(buildTab.GetChild(i).gameObject);
+            }
+        }
+    }
+
     public void ShowBuildInfo(bool onOff)
     {
         if (!onOff)
@@ -136,13 +163,14 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         string[] result = new string[4];
         int[] result_Int = new int[2];
         TMP_Text buildInfoText = buildInfo.GetComponentInChildren<TMP_Text>();
+        Debug.Log(buildInfoText);
         for (int i = 0; i < 2; i++)
         {
 
             result[i] = resourceData[index_1][index_2].ResourcesName[i];
 
             for (int j = 0; j < 2; j++)
-            {
+            {                
                 result_Int[j] = resourceData[index_1][index_2].ResourcesCount[j];
                 result[2 + j] = $"{result_Int[j]}";
             }
@@ -158,26 +186,36 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         buildInfo.transform.position = mousePos;
     }
     public void SetBuildCard(BuildCardData data)
-    {
-
+    {        
         index_1 = data.JsonDataIndex_1;
         index_2 = data.JsonDataIndex_2;
         BuildCard card = buildCard.GetComponent<BuildCard>();
         card.buildData = data;
 
         Instantiate(buildCard, buildTab);
-
-        /*        foreach (Transform buildSlot in buildTab)
-                {
-                    if (buildSlot.childCount >= 1)
-                    {
-                        GameObject theCard = GetComponentInChildren<GameObject>();
-                        cards.Add(data.Name, theCard);
-                        break;
-                    }
-                }*/
-
+        /*
+        foreach (Transform buildSlot in buildTab)
+        {
+            if (buildSlot.childCount >= 1)
+            {
+                GameObject theCard = GetComponentInChildren<GameObject>();
+                cards.Add(data.Name, theCard);
+                break;
+            }
+        }
+        */
     }
+
+    public void SetCraftCard(Recipe data)
+    {        
+        index_1 = data.JsonDataIndex_1;
+        index_2 = data.JsonDataIndex_2;
+        CraftCard card = craftdCard.GetComponent<CraftCard>();
+        card.recipeData = data;
+
+        Instantiate(craftdCard, buildTab);        
+    }
+
     public void SetSceneCard(BuildCardData data)
     {
         sceneNameText.text = data.Name;

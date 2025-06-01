@@ -27,10 +27,24 @@ public class BuildableObject : MonoBehaviour, IBuildableObject
         bool isNoramlOperation = InventoryManager.Instance.SpendResource(resourceData[type][level[type]].ResourcesName, resourceData[type][level[type]].ResourcesCount);
 
 
-        if(isNoramlOperation == true) //
+        if(isNoramlOperation == true)
         {
-            gameObject.transform.GetChild(type).gameObject.SetActive(true);
-            level[type]++;
+            //gameObject.transform.GetChild(type).gameObject.SetActive(true);
+            //level[type]++;
+            
+            CraftStation station = PlayerManager.Instance.Player._interaction.curInteractObject.GetComponent<CraftStation>();
+            
+            if (station != null && station.recipes != null)
+            {
+                // Crafting 컴포넌트에서 제작 시도
+                PlayerManager.Instance.Player._interaction.crafting = GetComponent<Crafting>();
+
+                bool craft = PlayerManager.Instance.Player._interaction.crafting.Craft(station.recipes);
+            }
+            else
+            {
+                Debug.Log("제작이 불가능합니다");
+            }
         }
         else
         {

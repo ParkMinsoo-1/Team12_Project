@@ -7305,6 +7305,7 @@ MonoBehaviour:
   player: {fileID: 0}
   ps: {fileID: 1093906676}
   cardData: {fileID: 0}
+  recipeData: {fileID: 0}
 --- !u!4 &787787228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 05b46ff2818c470459fe6ac65e628097, type: 3}
@@ -7778,6 +7779,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes: {fileID: 11400000, guid: 17984a088c5ba904c9d9b2eae0d12acc, type: 2}
+--- !u!114 &832569372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832569365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c10595f6f81a8449764dee798b3490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CraftData: {fileID: 11400000, guid: 0b3e466a8b6f36f4f823700e15958cc1, type: 2}
 --- !u!1 &837370058
 GameObject:
   m_ObjectHideFlags: 0
@@ -14607,6 +14621,7 @@ MonoBehaviour:
   button: {fileID: 454136903}
   realButton: {fileID: 2054549035}
   buildCard: {fileID: 1939368016170807407, guid: 3297867db4dfed847af634ac629a8494, type: 3}
+  craftdCard: {fileID: 1939368016170807407, guid: 7dbe8f41692ff904991d69e81888dd54, type: 3}
   buildPanel: {fileID: 388568171}
   buildTab: {fileID: 1065801474}
   objectInfoPanel: {fileID: 831193168}
@@ -14616,6 +14631,7 @@ MonoBehaviour:
   sceneDiscriptionText: {fileID: 8815025675287386419}
   sceneIcon: {fileID: 2336426148020179709}
   isBuilding: 0
+  isCrafting: 0
   isSceneSelect: 0
   ReadBuildData: {fileID: 607227578}
   index_1: 0
@@ -15003,6 +15019,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7ed5e6587755ee489cc1d18c4a644fe, type: 3}
       insertIndex: -1
       addedObject: {fileID: 832569369}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7ed5e6587755ee489cc1d18c4a644fe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 832569372}
   m_SourcePrefab: {fileID: 100100000, guid: a7ed5e6587755ee489cc1d18c4a644fe, type: 3}
 --- !u!224 &1503732081 stripped
 RectTransform:

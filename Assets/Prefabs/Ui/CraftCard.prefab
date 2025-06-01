@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3228690468124084416}
   - component: {fileID: 5429759071262486540}
   m_Layer: 5
-  m_Name: BuildCardLayout
+  m_Name: CraftCardLayout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,8 +199,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3513987599669721441}
-        m_TargetAssemblyTypeName: BuildCard, Assembly-CSharp
+      - m_Target: {fileID: -1530972511097079181}
+        m_TargetAssemblyTypeName: CraftCard, Assembly-CSharp
         m_MethodName: UpgadeBuild
         m_Mode: 1
         m_Arguments:
@@ -222,9 +222,10 @@ GameObject:
   - component: {fileID: 3102940900020966546}
   - component: {fileID: 3657057147990665766}
   - component: {fileID: 8102326945067570869}
-  - component: {fileID: 3513987599669721441}
+  - component: {fileID: -1530972511097079181}
+  - component: {fileID: 2783784480491324237}
   m_Layer: 5
-  m_Name: BuildCard
+  m_Name: CraftCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +289,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3513987599669721441
+--- !u!114 &-1530972511097079181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,16 +298,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1939368016170807407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69fab0250fd9079448916f009956b8eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 273df969e375b174184c10f70d8b1320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
   - {fileID: 5081456300933714639}
   - {fileID: 1110713561860581641}
   photo: {fileID: 6148513070302241479}
-  buildData: {fileID: 11400000, guid: 0b3e466a8b6f36f4f823700e15958cc1, type: 2}
   recipeData: {fileID: 11400000, guid: 17984a088c5ba904c9d9b2eae0d12acc, type: 2}
   infoUi: {fileID: 0}
+--- !u!114 &2783784480491324237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939368016170807407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40cf9e09c65d869478eddab85e2dee30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 0}
 --- !u!1 &2431897418295432030
 GameObject:
   m_ObjectHideFlags: 0

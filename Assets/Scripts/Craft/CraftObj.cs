@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CraftObj : MonoBehaviour
+public class CraftObj : MonoBehaviour, IInterctable
 {
-    // Start is called before the first frame update
+    public BuildCardData CraftData;
+    CraftStation craftStation;
+
     void Start()
     {
-        
+        craftStation = GetComponent<CraftStation>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public string MyInfo()
     {
-        
+        string info = "Open Craft Tab";
+        UiManager.Instance.recipeData = craftStation.recipes;
+
+        return info;
+    }
+    public string MyCase()
+    {
+        return "Craft";
     }
 }

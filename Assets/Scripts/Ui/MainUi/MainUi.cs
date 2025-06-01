@@ -56,6 +56,10 @@ public class MainUi : MonoBehaviour
             {
                 infoUi.SetBuildCard(UiManager.Instance.cardData);
             }
+            else if(UiManager.Instance.recipeData != null)
+            {                
+                infoUi.SetCraftCard(UiManager.Instance.recipeData);
+            }
         }
         infoUi.objectInfoPanel.SetActive(onOff);
     }

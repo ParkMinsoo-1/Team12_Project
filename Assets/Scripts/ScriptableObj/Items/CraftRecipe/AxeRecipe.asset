@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed22e8ee1962a641884c34b7173d1bd, type: 3}
   m_Name: AxeRecipe
   m_EditorClassIdentifier: 
+  craftName: Axe
+  discription: Axe Discription
+  photo: {fileID: 21300000, guid: d721753bf7d9afc40a405a75bd511b0c, type: 3}
+  jsonDataIndex_1: 0
+  jsonDataIndex_2: 0
   resources:
   - {fileID: 11400000, guid: 2935dab9c31d15e418b00aa90f260c68, type: 2}
   - {fileID: 11400000, guid: 2cb73f76f19f71d42924d6e967c03b77, type: 2}
