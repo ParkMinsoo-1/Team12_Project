@@ -101,6 +101,11 @@ MonoBehaviour:
   rigid: {fileID: 5422797291856346798}
   myBody: {fileID: 8075428757287812886}
   zombieData: {fileID: 11400000, guid: 9a4772c5f1ddfba4eb804de68c1411d5, type: 2}
+  stateWorking: 0
+  stateMessage: 0
+  patrolDirection: {x: 0, y: 0, z: 0}
+  currentHp: 0
+  maxHp: 0
 --- !u!1001 &8075428757287675310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,8 +185,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100056, guid: 8c53cffd52097cf4582f0a090c9a833e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7802412392919967512}
+    - targetCorrespondingSourceObject: {fileID: 100056, guid: 8c53cffd52097cf4582f0a090c9a833e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7150831559892693025}
   m_SourcePrefab: {fileID: 100100000, guid: 8c53cffd52097cf4582f0a090c9a833e, type: 3}
+--- !u!1 &8075428757287641974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100056, guid: 8c53cffd52097cf4582f0a090c9a833e, type: 3}
+  m_PrefabInstance: {fileID: 8075428757287675310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7802412392919967512
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075428757287641974}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 1, z: 0.7}
+  m_Center: {x: 0, y: 0.5, z: 0.4}
+--- !u!114 &7150831559892693025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075428757287641974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f777c6b7d3aee48b145c6821c8fecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 7802412392919967512}
+  zombie: {fileID: 5718847470394459701}
+  isAttack: 0
 --- !u!4 &8075428757287812886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400056, guid: 8c53cffd52097cf4582f0a090c9a833e, type: 3}

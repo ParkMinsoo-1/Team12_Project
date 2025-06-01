@@ -10,7 +10,7 @@ public class AttackState : IState
         this.zombie = zombie;
     }
     float attackTimer;
-    float attackDuration = 1f;
+    float attackDuration = 1.75f;
 
     public void Enter()
     {

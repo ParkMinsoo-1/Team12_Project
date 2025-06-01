@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerStatus : MonoBehaviour
+public class PlayerStatus : MonoBehaviour, IDamageable
 {
     public StatusManager statusManager;
     
@@ -26,8 +26,12 @@ public class PlayerStatus : MonoBehaviour
     {
         hunger.StatChange(value, "Add");
     }
+    public void TakePhysicalDamage(float damageAmount)
+    {
+        health.StatChange((int)damageAmount, "Subtract");
+    }
 
-    
+
 
     public void Death()
     {

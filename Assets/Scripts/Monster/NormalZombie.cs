@@ -17,7 +17,7 @@ public enum ZombieStateType
     Attack,
     Dead
 }
-public class NormalZombie : MonoBehaviour
+public class NormalZombie : MonoBehaviour, IDamageable
 {
     protected IdleState idle;
     protected PatrolState patrol;
@@ -111,6 +111,18 @@ public class NormalZombie : MonoBehaviour
         stateWorking = false; //idle상태 종료 안내
         stateMessage = message;
     }
+    public void TakePhysicalDamage(float damageAmount)
+    {
+        if (currentHp <= 0 || isDead)
+        {
+            return;
+        }
+        else
+        {
+            currentHp = Mathf.Clamp(currentHp - (int)damageAmount, 0, maxHp);
+        }
+    }
+
     public void RemoveThisZombie()
     {
         Destroy(this.gameObject);
