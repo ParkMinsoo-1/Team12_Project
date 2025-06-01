@@ -21,4 +21,7 @@ public class BuildCardData : ScriptableObject
 
     [SerializeField] int jsonDataIndex_2;
     public int JsonDataIndex_2 => jsonDataIndex_2;
+
+    [SerializeField] int mapCode;
+    public int MapCode => mapCode;
 }
