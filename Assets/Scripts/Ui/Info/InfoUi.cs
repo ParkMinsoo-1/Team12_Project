@@ -40,7 +40,7 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public BuildableObjectsData[][] resourceData;
     public int index_1 = 0;
     public int index_2 = 0;
-
+    public int nowMapCode = 0;
     public Dictionary<string,GameObject> cards = new Dictionary<string,GameObject>();
 
     private void Awake()
@@ -181,8 +181,9 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void SetSceneCard(BuildCardData data)
     {
         sceneNameText.text = data.Name;
-        sceneDiscriptionText.text = data.Discription; 
+        sceneDiscriptionText.text = data.Discription;
         sceneIcon.sprite = data.Photo;
+        nowMapCode = data.MapCode;
     }
     //public void CheckTheCard(BuildCardData data)
     //{
