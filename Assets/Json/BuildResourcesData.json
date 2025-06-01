@@ -1,12 +1,12 @@
 [
 	[
 		{
-		"ResourcesName": ["Wood"],
-		"ResourcesCount": [5]
+		"ResourcesName": ["Wood",""],
+		"ResourcesCount": [5,0]
 		},
 		{
-		"ResourcesName": ["Wood"],
-		"ResourcesCount": [10]
+		"ResourcesName": ["Wood",""],
+		"ResourcesCount": [10,0]
 		},
 		{
 		"ResourcesName": ["Wood","Stone"],
