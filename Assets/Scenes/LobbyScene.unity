@@ -14541,6 +14541,7 @@ MonoBehaviour:
   ReadBuildData: {fileID: 607227578}
   index_1: 0
   index_2: 0
+  nowMapCode: 0
 --- !u!1001 &1455237122
 PrefabInstance:
   m_ObjectHideFlags: 0
