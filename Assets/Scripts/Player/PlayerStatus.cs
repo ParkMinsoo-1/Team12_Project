@@ -17,9 +17,9 @@ public class PlayerStatus : MonoBehaviour, IDamageable
         {
             health.StatChange(3, "Subtract");
         }
-        else if (hunger.currentValue > 97)
+        else if (hunger.currentValue > 87)
         {
-            health.StatChange(1, "Add");
+            health.StatChange(2, "Add");
         }
 
         hunger.StatChange(hunger.passiveValue, "Subtract");

@@ -165,7 +165,7 @@ public class GameManager: MonoBehaviour
 
         if (nextState == GameState.InMap)
         {
-            PlayerManager.Instance.Player.gameObject.SetActive(false);
+            //PlayerManager.Instance.Player.gameObject.SetActive(false);
             playerCam.transform.rotation = Quaternion.Euler(90, 0, 0);
             playerCam.target = GameObject.FindWithTag("Map").transform;
             cam.orthographicSize = 8f;
