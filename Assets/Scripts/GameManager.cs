@@ -164,7 +164,7 @@ public class GameManager: MonoBehaviour
         {
             CameraScript camScript = cam.AddComponent<CameraScript>();
             DungeonManager dm = FindObjectOfType<DungeonManager>();
-            dm.EnterDungeon(1);
+            dm.EnterDungeon();
         }
     }
     //public void EndLobby()
