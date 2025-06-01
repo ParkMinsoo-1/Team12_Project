@@ -448,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeData: {fileID: 11400000, guid: 0b3e466a8b6f36f4f823700e15958cc1, type: 2}
   infoUi: {fileID: 0}
-  myCase: SceneMap
+  myCase: SceneBase
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

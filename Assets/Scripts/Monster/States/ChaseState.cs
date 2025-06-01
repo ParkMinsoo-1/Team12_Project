@@ -19,20 +19,39 @@ public class ChaseState : IState
 
     public void Enter()
     {
-        Debug.Log("추격상태 진입");
+        InitChase();
     }
     public void Update()
     {
-        Debug.Log("추격상태 업데이트");
-        Vector3 moveDirection = new Vector3(
-            PlayerManager.Instance.Player.transform.position.x - myTransform.position.x, 
-            0, 
-            PlayerManager.Instance.Player.transform.position.z - myTransform.position.z).normalized;
+        float distanceOfPlayer = PlayerManager.Instance.CheckDistanceOfPlayer(zombie.transform.position);
 
-        myRigid.MovePosition(myRigid.position +(moveDirection * 5f * Time.deltaTime));
+        if (zombie.zombieData.AttackRange >= distanceOfPlayer)
+        {
+            zombie.MessageToFsm(ZombieStateType.Attack);
+            return;
+        }
+        if (zombie.zombieData.ChaseRange <= distanceOfPlayer)
+        {
+            zombie.MessageToFsm(ZombieStateType.Idle);
+            return;
+        }
+
+        Vector3 playerPos = PlayerManager.Instance.playerPos; 
+        Vector3 myPos = zombie.transform.position;  
+
+        Vector3 moveDirection = new Vector3 (playerPos.x - myPos.x, 0, playerPos.z - myPos.z).normalized;
+        myRigid.MovePosition(myRigid.position + (moveDirection * zombie.zombieData.MoveSpeed * Time.deltaTime));
+
+        float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+        zombie.myBody.rotation = Quaternion.Euler(0, targetAngle, 0);
     }
     public void Exit()
     {
-        Debug.Log("추격상태 탈출");
+        zombie.anim.SetFloat("MoveSpeed", 0);
+        zombie.anim.SetTrigger("Reset");
+    }
+    private void InitChase()
+    {
+        zombie.anim.SetFloat("MoveSpeed", 1);
     }
 }

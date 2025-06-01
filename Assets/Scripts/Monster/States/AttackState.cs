@@ -9,17 +9,31 @@ public class AttackState : IState
     {
         this.zombie = zombie;
     }
+    float attackTimer;
+    float attackDuration = 1f;
 
     public void Enter()
     {
-
+        InitAttack();
     }
     public void Update()
     {
+        zombie.rigid.velocity = Vector3.zero;
 
+        attackTimer += Time.deltaTime;
+
+        if (attackTimer >= attackDuration)
+        {
+            zombie.MessageToFsm(ZombieStateType.Chase);
+        }
     }
     public void Exit()
     {
-
+        zombie.anim.SetTrigger("Reset");
+    }
+    private void InitAttack()
+    {
+        attackTimer = 0f;
+        zombie.anim.SetTrigger("Attack");
     }
 }

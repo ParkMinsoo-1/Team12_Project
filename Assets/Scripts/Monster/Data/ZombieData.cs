@@ -12,11 +12,15 @@ public class ZombieData : ScriptableObject
     public float AttackRange { get { return attackRange; } }
 
     [SerializeField] int atk;
-    public float Atk { get { return atk; } }
+    public int Atk { get { return atk; } }
 
     [SerializeField] int currentHp;
-    public float CurrentHp { get { return currentHp; } }
+    public int CurrentHp { get { return currentHp; } }
+    //public float CurrentHp { get { return currentHp; } }
 
     [SerializeField] int maxHp;
-    public float MaxHp { get { return maxHp; } }
+    public int MaxHp { get { return maxHp; } }
+
+    [SerializeField] int moveSpeed;
+    public float MoveSpeed { get { return moveSpeed; } }
 }

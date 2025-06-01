@@ -12933,7 +12933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombieList:
-  - {fileID: 6514577667072978499, guid: 82ce7a26593275e4ab62b4b5ebe2ac84, type: 3}
+  - {fileID: 4244708204283096899, guid: 82ce7a26593275e4ab62b4b5ebe2ac84, type: 3}
 --- !u!4 &643836171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 751e4edb210b80047b4dfe88619dc5f2, type: 3}

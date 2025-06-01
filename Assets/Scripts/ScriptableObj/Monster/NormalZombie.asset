@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1131d54d3ca45eb4f96f412f902ab7cd, type: 3}
   m_Name: NormalZombie
   m_EditorClassIdentifier: 
-  chaseRange: 10
+  chaseRange: 20
   attackRange: 3
-  atk: 8
+  atk: 12
   currentHp: 50
   maxHp: 50
+  moveSpeed: 6
