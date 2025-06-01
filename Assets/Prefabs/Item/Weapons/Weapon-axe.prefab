@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4151712042942336075}
   - component: {fileID: 5191496050678356327}
   - component: {fileID: -4544147532527509759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon-axe
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +133,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 5191496050678356327}
+  isAttack: 0
+  isAttackEnd: 0

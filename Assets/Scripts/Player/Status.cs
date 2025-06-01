@@ -14,6 +14,7 @@ public class Status : MonoBehaviour
     public Image statBar;
     public TMP_Text statText;
 
+
     private void Start()
     {
         currentValue = startValue;

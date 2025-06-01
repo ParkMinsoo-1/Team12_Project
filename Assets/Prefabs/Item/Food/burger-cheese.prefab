@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3368722716633591329}
   - component: {fileID: -7556855883397241332}
   - component: {fileID: 3118126929395957973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: burger-cheese
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

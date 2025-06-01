@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 16
   itemName: Fish-large
   description: this is Fish-large
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a8abc2192e9333a40b95cab0d525f400, type: 3}
   itemtype: 4
   maxStack: 100
   price: 10

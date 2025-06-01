@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 9
   itemName: Ham
   description: this is Ham
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a2b2bffcc678b4040931bb38440b7a4f, type: 3}
   itemtype: 4
   maxStack: 100
   price: 25

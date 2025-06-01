@@ -13,8 +13,18 @@ public class PlayerStatus : MonoBehaviour, IDamageable
 
     public void update()
     {
+        if (hunger.currentValue < 30)
+        {
+            health.StatChange(3, "Subtract");
+        }
+        else if (hunger.currentValue > 97)
+        {
+            health.StatChange(1, "Add");
+        }
+
         hunger.StatChange(hunger.passiveValue, "Subtract");
-        stamina.StatChange(stamina.passiveValue, "Subtract");
+
+        //stamina.StatChange(stamina.passiveValue, "Subtract");
     }
 
     public void Heal(int value)

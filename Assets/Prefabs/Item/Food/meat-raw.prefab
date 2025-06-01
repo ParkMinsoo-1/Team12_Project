@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5125452220063034444}
   - component: {fileID: 6495621131922482611}
   - component: {fileID: 1921545205394103507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: meat-raw
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7968390043893564922}
   - component: {fileID: 3822010538126852910}
   - component: {fileID: 7672380260578648248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon-knife
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +133,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 5191496050678356327, guid: 8a7a20a05c7b9ca42b5c47a222abe2bc, type: 3}
+  isAttack: 0
+  isAttackEnd: 0

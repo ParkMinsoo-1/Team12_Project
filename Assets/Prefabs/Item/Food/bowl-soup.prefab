@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2992405822389413973}
   - component: {fileID: 1543583775002199450}
   - component: {fileID: 2306684711130062244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bowl-soup
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

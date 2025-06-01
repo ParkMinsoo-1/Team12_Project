@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6104832875682941206}
   - component: {fileID: 8352124956005140457}
   - component: {fileID: 1208027493508757318}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: whole-ham
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
