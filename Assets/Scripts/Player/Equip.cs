@@ -63,6 +63,8 @@ public class Equip : MonoBehaviour
         if (weaponScript != null)
         {
             weaponScript.SetWeaponData(weaponPrefab);
+            weaponScript.InitWeapon();
+            PlayerManager.Instance.Player._playerController._animationController.weapon = weaponScript;
         }
     }
     
@@ -70,6 +72,7 @@ public class Equip : MonoBehaviour
     {
         if (weaponInstance != null)
         {
+            PlayerManager.Instance.Player._playerController._animationController.weapon = null;
             Destroy(weaponInstance);
             weaponInstance = null;
         }

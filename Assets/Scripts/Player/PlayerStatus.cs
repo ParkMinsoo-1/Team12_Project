@@ -26,9 +26,9 @@ public class PlayerStatus : MonoBehaviour, IDamageable
     {
         hunger.StatChange(value, "Add");
     }
-    public void TakePhysicalDamage(float damageAmount)
+    public void TakePhysicalDamage(int damageAmount)
     {
-        health.StatChange((int)damageAmount, "Subtract");
+        health.StatChange(damageAmount, "Subtract");
     }
 
 

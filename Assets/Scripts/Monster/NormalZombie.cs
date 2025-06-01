@@ -111,7 +111,7 @@ public class NormalZombie : MonoBehaviour, IDamageable
         stateWorking = false; //idle상태 종료 안내
         stateMessage = message;
     }
-    public void TakePhysicalDamage(float damageAmount)
+    public void TakePhysicalDamage(int damageAmount)
     {
         if (currentHp <= 0 || isDead)
         {
@@ -119,7 +119,7 @@ public class NormalZombie : MonoBehaviour, IDamageable
         }
         else
         {
-            currentHp = Mathf.Clamp(currentHp - (int)damageAmount, 0, maxHp);
+            currentHp = Mathf.Clamp(currentHp - damageAmount, 0, maxHp);
         }
     }
 

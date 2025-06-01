@@ -6,7 +6,7 @@ public class ZombieWeapon : MonoBehaviour
 {
     public BoxCollider col;
     public NormalZombie zombie;
-    public bool isAttack;
+    public bool isAttack = false;
 
     public void OnAttack()
     {
@@ -22,10 +22,12 @@ public class ZombieWeapon : MonoBehaviour
     {
         if (isAttack) return;
 
-        if (other.TryGetComponent(out IDamageable target))
+        isAttack = true;
+
+        if (other.TryGetComponent(out IDamageable target) && other.CompareTag("Player"))
         {
-            target.TakePhysicalDamage((float)zombie.zombieData.Atk);
-            isAttack = true;
+            Debug.Log($"플레이어 피해 입힘 데미지 : {zombie.zombieData.Atk}");
+            target.TakePhysicalDamage(zombie.zombieData.Atk);
         }
     }
 }

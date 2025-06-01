@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3166674699312284412}
   - component: {fileID: 4886168155026810157}
   - component: {fileID: 3510522365935909814}
+  - component: {fileID: 2254620499559286494}
   m_Layer: 0
   m_Name: Weapon-pickaxe
   m_TagString: Untagged
@@ -113,9 +114,22 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.17860828, y: 0.24, z: 0.0387}
   m_Center: {x: 0, y: 0.12, z: 0.000000059604645}
+--- !u!114 &2254620499559286494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720985168517176657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2e92a9bbd07ce4ba680221f6bedb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 5191496050678356327, guid: 8a7a20a05c7b9ca42b5c47a222abe2bc, type: 3}

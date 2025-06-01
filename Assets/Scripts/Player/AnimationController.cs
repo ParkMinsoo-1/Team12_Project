@@ -7,6 +7,8 @@ public class AnimationController : MonoBehaviour
 {
     private Animator animator;
     private bool isMove;
+    public Weapon weapon;
+    
 
     private void Awake()
     {
@@ -22,13 +24,14 @@ public class AnimationController : MonoBehaviour
     public void Attack()
     {
         animator.SetTrigger("IsAttack");
+
         EndAttack();
-
     }
-
+    
     public void EndAttack()
     {
         PlayerManager.Instance.Player._playerController.isAttack = false;
+
     }
 
     public void Damaged()
