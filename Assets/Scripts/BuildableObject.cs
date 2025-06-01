@@ -27,7 +27,7 @@ public class BuildableObject : MonoBehaviour, IBuildableObject
         bool isNoramlOperation = InventoryManager.Instance.SpendResource(resourceData[type][level[type]].ResourcesName, resourceData[type][level[type]].ResourcesCount);
 
 
-        if(isNoramlOperation == true)
+        if(type == 0)
         {
             //gameObject.transform.GetChild(type).gameObject.SetActive(true);
             //level[type]++;
@@ -38,15 +38,18 @@ public class BuildableObject : MonoBehaviour, IBuildableObject
             if (station != null && station.recipes != null)
             {
                 bool craft = PlayerManager.Instance.Player._interaction.crafting.Craft(station.recipes);
+
             }
             else
             {
                 Debug.Log("제작이 불가능합니다");
+
             }
         }
         else
         {
             Debug.Log("자원이 부족합니다."); // 추후 UI로 띄우도록 수정
+
         }
     }
 

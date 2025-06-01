@@ -7302,7 +7302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainUi: {fileID: 1196149590}
-  player: {fileID: 0}
+  player: {fileID: 1093906656}
   ps: {fileID: 1093906676}
   cardData: {fileID: 0}
   recipeData: {fileID: 0}
@@ -16457,7 +16457,7 @@ PrefabInstance:
     - target: {fileID: 4766631999666160180, guid: b1ec2b57180ce6b40bea448f48f71278, type: 3}
       propertyPath: defaultWeaponPrefab
       value: 
-      objectReference: {fileID: 11400000, guid: 827db439384850745b26401915a44d54, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6661634775587179367, guid: b1ec2b57180ce6b40bea448f48f71278, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.506634
