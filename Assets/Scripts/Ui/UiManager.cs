@@ -12,6 +12,8 @@ public class UiManager : MonoBehaviour
     public BuildCardData cardData;
     public Recipe recipeData;
 
+    public GameObject gameOverPanel;
+
     private void Awake()
     {
         if (Instance == null)
@@ -32,5 +34,10 @@ public class UiManager : MonoBehaviour
             ps.Heal(10);
             
         }
+    }
+
+    public void GameOverUiOpen()
+    {
+        gameOverPanel.SetActive(true);
     }
 }

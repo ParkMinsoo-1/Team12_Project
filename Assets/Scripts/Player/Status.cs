@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.Processors;
 using UnityEngine.UI;
 public class Status : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class Status : MonoBehaviour
 
     public void StatChange(int value, string choice)
     {
+        bool isDead = false;
         switch (choice)
         {
             case "Add":
@@ -56,5 +58,12 @@ public class Status : MonoBehaviour
         float result = (float)currentValue / (float)maxValue;
         statBar.fillAmount = result;
         statText.text = $"{((int)(result * 100))}%";
+
+        if (isDead = PlayerManager.Instance.Player._status.CheckPlayerDeath())
+        {
+            PlayerManager.Instance.Player._playerController._animationController.PlayerDead();
+            PlayerManager.Instance.Player._playerController.isDead = true;
+            GameManager.Instance.isStateRunning = false;
+        }
     }
 }

@@ -11,7 +11,8 @@ public enum GameState
     InLobby,
     InMap,
     InBase,
-    InStage
+    InStage,
+    GameOver
 }
 
 public class GameManager: MonoBehaviour
@@ -76,12 +77,23 @@ public class GameManager: MonoBehaviour
                     nextState = DecideNextState();
                     ToNextScene();
                     break;
+
+                case GameState.GameOver:
+                    UiManager.Instance.GameOverUiOpen();
+                    yield return new WaitUntil(() => !isStateRunning);
+                    nextState = DecideNextState();
+                    break;
             }
         }
     }
     private GameState DecideNextState()
     {
         isStateRunning = true;
+
+        if (PlayerManager.Instance.Player._playerController.isDead)
+        {
+            return GameState.GameOver;
+        }
 
         if (currentState == GameState.InLobby)
         {

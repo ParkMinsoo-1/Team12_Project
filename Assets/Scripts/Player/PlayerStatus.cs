@@ -30,12 +30,13 @@ public class PlayerStatus : MonoBehaviour, IDamageable
     {
         health.StatChange(damageAmount, "Subtract");
     }
-
-
-
-    public void Death()
+    public bool CheckPlayerDeath()
     {
-        //플레이어 죽음.
+        if (health.currentValue <= 0)
+        {
+            return true;
+        }
+        return false;
     }
 
 }
