@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public AnimationController _animationController;
     public bool isOpenInven = false;
     public bool isAttack;
-    
+    public bool isDead = false;
 
     [Header ("Movement")]
     [SerializeField] private float movSpeed;
@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(isDead) return;
+
         if (isAttack == false)
         {
             Move();
@@ -83,6 +85,8 @@ public class PlayerController : MonoBehaviour
     }
     public void OnOpenInventory(InputAction.CallbackContext context)
     {
+        if (isDead) return;
+
         if (context.performed)
         {
             switch (isOpenInven)
@@ -102,6 +106,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttackInput(InputAction.CallbackContext context)
     {
+        if (isDead) return;
+
         if (context.phase == InputActionPhase.Started)
         {
             _animationController.Attack();

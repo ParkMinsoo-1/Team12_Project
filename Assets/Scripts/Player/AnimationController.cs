@@ -44,6 +44,11 @@ public class AnimationController : MonoBehaviour
         animator.SetTrigger("IsGathering");
     }
 
+    public void PlayerDead()
+    {
+        animator.SetTrigger("Dead");
+    }
+
     public void GatherAndMove()
     {
         if (isMove = true)

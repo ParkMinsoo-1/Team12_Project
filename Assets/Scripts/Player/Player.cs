@@ -16,4 +16,5 @@ public class Player : MonoBehaviour
         _status = GetComponent<PlayerStatus>();
     }
 
+
 }
