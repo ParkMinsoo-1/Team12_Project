@@ -10,7 +10,7 @@ public class CraftCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public Recipe recipeData;
     public InfoUi infoUi;
 
-    //½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®·Î °Ç¼³ °¡´ÉÇÑ Á¤º¸¸¦ ¹Þ¾Æ¿È
+    //ï¿½ï¿½Å©ï¿½ï¿½ï¿½Íºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ç¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½
     private bool isMouseOn = false;
     //private Vector2 mouseInfoPos = Vector2.zero;
     //private Vector2 buttonPos = Vector2.zero;
@@ -22,8 +22,8 @@ public class CraftCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         photo.sprite = recipeData.Photo;
     }
     public void OnPointerEnter(PointerEventData eventData)
-    //¸¶¿ì½ºÆ÷ÀÎÅÍ°¡ ÄÝ¶óÀÌ´õÃ³·³ ÀÚ½ÅÀÇ ¹üÀ§¾È¿¡ µé¾î¿ÔÀ» ¶§
-    //ÀÌ ¹üÀ§´Â ¿ÀºêÁ§Æ® ÀÚÃ¼ ¹üÀ§ÀÎµíÇÔ
+    //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½Ã³ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+    //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½
     {
         //Rect buttonArea = new Rect(button.position, 4f);
         //eventData.currentInputModule
@@ -33,7 +33,7 @@ public class CraftCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     }
     public void OnPointerExit(PointerEventData eventData)
-    //¸¶¿ì½ºÆ÷ÀÎÅÍ°¡ ÄÝ¶óÀÌ´õÃ³·³ ÀÚ½ÅÀÇ ¹üÀ§¾È¿¡¼­ ³ª°¬À» ¶§
+    //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½Ã³ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     {
         isMouseOn = false;
         infoUi.ShowBuildInfo(false);
@@ -54,7 +54,7 @@ public class CraftCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                 infoUi.OnShowCraftPanel();
                 UiManager.Instance.mainUi.UpdateInfoUi(null, false);
                 GameManager.Instance.select = "Base";
-                GameManager.Instance.isStateRunning = false;
+                GameManager.Instance.isStateRunning = true;
                 infoUi.ShowBuildInfo(false);
                 return;
             case "Work Bench":

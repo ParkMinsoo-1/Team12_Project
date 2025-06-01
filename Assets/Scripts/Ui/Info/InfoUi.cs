@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
+using System.Text;
 
 interface IInterctable
 {
@@ -53,13 +54,13 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         infoText.text = $"{info}";
     }
     public void OnPointerEnter(PointerEventData eventData)
-    //¸¶¿ì½ºÆ÷ÀÎÅÍ°¡ ÄÝ¶óÀÌ´õÃ³·³ ÀÚ½ÅÀÇ ¹üÀ§¾È¿¡ µé¾î¿ÔÀ» ¶§
-    //ÀÌ ¹üÀ§´Â ¿ÀºêÁ§Æ® ÀÚÃ¼ ¹üÀ§ÀÎµíÇÔ
+    //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½Ã³ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+    //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½
     {
         button.color = Color.green;
     }
     public void OnPointerExit(PointerEventData eventData)
-    //¸¶¿ì½ºÆ÷ÀÎÅÍ°¡ ÄÝ¶óÀÌ´õÃ³·³ ÀÚ½ÅÀÇ ¹üÀ§¾È¿¡¼­ ³ª°¬À» ¶§
+    //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½Ã³ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     {
         button.color = Color.red;
     }
@@ -78,6 +79,7 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 realButton.onClick.AddListener(OnShowBuildPanel);
                 break;
             case "Craft":
+                GameManager.Instance.select = "Base";
                 realButton.onClick.AddListener(OnShowCraftPanel);
                 break;
             case "SceneMap":
@@ -163,21 +165,26 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         string[] result = new string[4];
         int[] result_Int = new int[2];
         TMP_Text buildInfoText = buildInfo.GetComponentInChildren<TMP_Text>();
-
-        for (int i = 0; i < 2; i++)
+        StringBuilder st = new StringBuilder();
+        int Length = resourceData[index_1][index_2].ResourcesName.Length;
+        for (int i = 0; i < Length; i++)
         {
-
             result[i] = resourceData[index_1][index_2].ResourcesName[i];
+            st.Append(result[i] + " / ");            
+        }
+        
+        st.Remove(st.Length - 3, 3);
+        st.Append("\n");
 
-            for (int j = 0; j < 2; j++)
-            {                
-                result_Int[j] = resourceData[index_1][index_2].ResourcesCount[j];
-                result[2 + j] = $"{result_Int[j]}";
-            }
+        for (int j = 0; j < Length; j++)
+        {            
+            result_Int[j] = resourceData[index_1][index_2].ResourcesCount[j];
+            st.Append(result_Int[j] + " / ");
         }
 
-        buildInfoText.text = $"{result[0]} / {result[1]}\n" +
-                             $"{result[2]} / {result[3]}";
+        st.Remove(st.Length - 3, 3);
+
+        buildInfoText.text = st.ToString();
 
         buildInfo.SetActive(onOff);
     }
