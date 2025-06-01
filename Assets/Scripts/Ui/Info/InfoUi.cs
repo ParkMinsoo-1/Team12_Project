@@ -163,7 +163,7 @@ public class InfoUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         string[] result = new string[4];
         int[] result_Int = new int[2];
         TMP_Text buildInfoText = buildInfo.GetComponentInChildren<TMP_Text>();
-        Debug.Log(buildInfoText);
+
         for (int i = 0; i < 2; i++)
         {
 

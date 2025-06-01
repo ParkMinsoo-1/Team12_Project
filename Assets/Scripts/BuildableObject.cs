@@ -33,12 +33,10 @@ public class BuildableObject : MonoBehaviour, IBuildableObject
             //level[type]++;
             
             CraftStation station = PlayerManager.Instance.Player._interaction.curInteractObject.GetComponent<CraftStation>();
-            
+
+            PlayerManager.Instance.Player._interaction.crafting = PlayerManager.Instance.Player._interaction.GetComponent<Crafting>();
             if (station != null && station.recipes != null)
             {
-                // Crafting 컴포넌트에서 제작 시도
-                PlayerManager.Instance.Player._interaction.crafting = GetComponent<Crafting>();
-
                 bool craft = PlayerManager.Instance.Player._interaction.crafting.Craft(station.recipes);
             }
             else
